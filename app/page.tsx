@@ -113,7 +113,7 @@ export default function Home() {
             </div>
             <div className="hero-portrait" aria-label="Portrait of Mr. Huang">
               <Image
-                src="/images/attorney-huang.svg"
+                src="/images/mr-huang.png"
                 alt="Professional portrait of Mr. Huang, Florida attorney and certified mediator"
                 width={900}
                 height={1120}
@@ -154,7 +154,7 @@ export default function Home() {
         <section className="about container" id="about" aria-labelledby="about-heading">
           <div className="about-image">
             <Image
-              src="/images/attorney-huang.svg"
+              src="/images/mr-huang.png"
               alt="Mr. Huang in professional attire for Huang Law, P.A."
               width={900}
               height={1120}
