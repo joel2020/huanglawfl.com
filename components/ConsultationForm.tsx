@@ -2,43 +2,60 @@
 
 import { FormEvent, useState } from "react";
 
-const matterTypes = [
-  "Business or civil dispute",
-  "Mediation request",
-  "Contract or real estate matter",
-  "Immigration or cross-border concern",
-  "General legal counsel",
-];
+const subjects = ["Consultation Request", "Mediation Inquiry", "General Question"];
 
-const languages = ["English", "Mandarin", "Spanish"];
-const urgencyLevels = ["This week", "Within 30 days", "Planning ahead"];
+type ContactResponse = {
+  ok?: boolean;
+  mailto?: string;
+  error?: string;
+};
 
 export function ConsultationForm() {
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const subject = encodeURIComponent("Consultation Request - Huang Law, P.A.");
-    const body = encodeURIComponent(
-      [
-        "New consultation request",
-        "",
-        `Name: ${formData.get("name") || ""}`,
-        `Email: ${formData.get("email") || ""}`,
-        `Phone: ${formData.get("phone") || ""}`,
-        `Preferred language: ${formData.get("language") || ""}`,
-        `Matter type: ${formData.get("matter") || ""}`,
-        `Timing: ${formData.get("urgency") || ""}`,
-        "",
-        "Brief summary:",
-        `${formData.get("message") || ""}`,
-      ].join("\n"),
-    );
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      phone: String(formData.get("phone") || ""),
+      subject: String(formData.get("subject") || ""),
+      message: String(formData.get("message") || ""),
+      consent: formData.get("consent") === "on",
+    };
 
-    setStatus("Opening your email app with a prepared consultation request.");
-    window.location.href = `mailto:info@huanglawfl.com?subject=${subject}&body=${body}`;
+    setIsSubmitting(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = (await response.json()) as ContactResponse;
+
+      if (!response.ok) {
+        throw new Error(data.error || "The message could not be sent.");
+      }
+
+      if (data.mailto) {
+        setStatus("Opening your email app with a prepared message.");
+        window.location.href = data.mailto;
+        return;
+      }
+
+      setStatus("Your message was sent to Huang Law, P.A.");
+      form.reset();
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "The message could not be sent.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -53,47 +70,37 @@ export function ConsultationForm() {
           <input name="email" type="email" autoComplete="email" required />
         </label>
         <label>
-          <span>Phone</span>
+          <span>Phone <em>optional</em></span>
           <input name="phone" type="tel" autoComplete="tel" />
         </label>
         <label>
-          <span>Preferred language</span>
-          <select name="language" defaultValue="English">
-            {languages.map((language) => (
-              <option key={language}>{language}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>Matter type</span>
-          <select name="matter" defaultValue={matterTypes[0]}>
-            {matterTypes.map((matter) => (
-              <option key={matter}>{matter}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>Timing</span>
-          <select name="urgency" defaultValue={urgencyLevels[0]}>
-            {urgencyLevels.map((urgency) => (
-              <option key={urgency}>{urgency}</option>
+          <span>Subject</span>
+          <select name="subject" defaultValue={subjects[0]} required>
+            {subjects.map((subject) => (
+              <option key={subject}>{subject}</option>
             ))}
           </select>
         </label>
       </div>
       <label>
-        <span>Brief summary</span>
+        <span>Message</span>
         <textarea
           name="message"
           rows={5}
-          placeholder="Share the parties involved, what happened, and what outcome you need."
+          placeholder="Share a brief summary of the matter. Do not include confidential details until the firm confirms representation."
           required
         />
+      </label>
+      <label className="consent-field">
+        <input name="consent" type="checkbox" required />
+        <span>I understand this form does not create an attorney-client relationship.</span>
       </label>
       <p className="form-disclaimer">
         Submitting this request does not create an attorney-client relationship. Do not include confidential details until the firm confirms representation.
       </p>
-      <button className="button button-gold" type="submit">Prepare Consultation Request</button>
+      <button className="button button-gold" type="submit" disabled={isSubmitting}>
+        {isSubmitting ? "Preparing Request" : "Send Message"}
+      </button>
       {status ? <p className="form-status" role="status">{status}</p> : null}
     </form>
   );

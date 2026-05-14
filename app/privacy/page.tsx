@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
         <p className="eyebrow">Privacy Policy</p>
         <h1>Privacy Policy</h1>
         <p>
-          Huang Law, P.A. collects information that visitors choose to provide through email, consultation requests, or direct communication with the firm. That information may include contact details, preferred language, matter type, timing, and a brief summary of the legal issue.
+          Huang Law, P.A. collects information that visitors choose to provide through email, consultation requests, or direct communication with the firm. That information may include name, email, phone number, subject, and message content.
         </p>
         <h2>How Information Is Used</h2>
         <p>

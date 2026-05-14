@@ -3,6 +3,9 @@ import { ConsultationForm } from "@/components/ConsultationForm";
 import { Header } from "@/components/Header";
 
 const siteUrl = "https://huanglawfl.com";
+const phone = "(213) 259-3316";
+const email = "info@huanglawfl.com";
+const officeAddress = "2139 N. University Dr., #5184, Coral Springs, FL 33071";
 
 const credibility = [
   { value: "FL", label: "Licensed Florida Attorney" },
@@ -29,7 +32,26 @@ const services = [
   },
 ];
 
+const mediationServices = [
+  {
+    title: "Business & Commercial Disputes",
+    description:
+      "Neutral facilitation for partnership conflicts, business torts, contract disputes, and commercial matters — helping parties reach durable, cost-effective outcomes without prolonged litigation.",
+  },
+  {
+    title: "Contract & Real Estate Disputes",
+    description:
+      "Structured guidance through property disagreements, lease conflicts, contractor disputes, and contract interpretation matters with full confidentiality.",
+  },
+  {
+    title: "Civil & General Litigation Matters",
+    description:
+      "Skilled facilitation for a broad range of civil disputes, with a focus on reducing cost, preserving relationships, and reaching practical resolutions faster than trial.",
+  },
+];
+
 const credentials = [
+  "Florida Bar No. 1023249",
   "J.D., University of Miami School of Law",
   "B.A., University of Connecticut",
   "Licensed to practice law throughout Florida",
@@ -68,10 +90,19 @@ export default function Home() {
     "@type": "LegalService",
     name: "Huang Law, P.A.",
     url: siteUrl,
+    telephone: phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "2139 N. University Dr., #5184",
+      addressLocality: "Coral Springs",
+      addressRegion: "FL",
+      postalCode: "33071",
+      addressCountry: "US",
+    },
     areaServed: "Florida",
     founder: {
       "@type": "Person",
-      name: "Mr. Huang",
+      name: "Haidan Huang",
       alumniOf: ["University of Miami School of Law", "University of Connecticut"],
       knowsLanguage: ["English", "Mandarin", "Spanish"],
       jobTitle: "Florida Attorney and Florida Supreme Court Certified Mediator",
@@ -107,16 +138,16 @@ export default function Home() {
                 <span>Consultations by appointment. English, Mandarin, and Spanish available.</span>
               </div>
             </div>
-            <div className="hero-portrait" aria-label="Portrait of Mr. Huang">
+            <div className="hero-portrait" aria-label="Portrait of Haidan Daniel Huang">
               <Image
                 src="/images/mr-huang.png"
-                alt="Mr. Huang, Florida attorney and certified mediator"
+                alt="Haidan Daniel Huang, Florida attorney and certified mediator"
                 width={900}
                 height={1120}
                 priority
               />
               <div className="portrait-caption">
-                <strong>Mr. Huang</strong>
+                <strong>Haidan "Daniel" Huang</strong>
                 <span>Florida Attorney and Supreme Court Certified Mediator</span>
               </div>
             </div>
@@ -154,7 +185,7 @@ export default function Home() {
           <div className="attorney-image">
             <Image
               src="/images/mr-huang.png"
-              alt="Professional portrait of Mr. Huang"
+              alt="Professional portrait of Haidan Daniel Huang"
               width={900}
               height={1120}
             />
@@ -163,7 +194,7 @@ export default function Home() {
             <p className="eyebrow">Attorney Profile</p>
             <h2 id="attorney-heading">A boutique practice led by the attorney clients actually work with.</h2>
             <p>
-              Mr. Huang is a Florida attorney and Florida Supreme Court Certified Mediator. His practice focuses on litigation, dispute resolution, and strategic counsel for clients who need direct communication and practical execution.
+              Haidan "Daniel" Huang is a Florida attorney, Managing Partner of Huang Law, P.A., and Florida Supreme Court Certified Mediator. His practice focuses on litigation, dispute resolution, and strategic counsel for clients who need direct communication and practical execution.
             </p>
             <div className="credential-list" aria-label="Attorney credentials">
               {credentials.map((credential) => (
@@ -173,7 +204,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section proof" aria-labelledby="proof-heading">
+        <section className="section mediation" id="mediation" aria-labelledby="mediation-heading">
+          <div className="container split-heading">
+            <div>
+              <p className="eyebrow">Certified Mediation</p>
+              <h2 id="mediation-heading">Focused mediation for business, real estate, and civil disputes.</h2>
+            </div>
+            <p>
+              As a Florida Supreme Court Certified Mediator, Haidan "Daniel" Huang helps parties work through disputes with preparation, confidentiality, and attention to practical outcomes.
+            </p>
+          </div>
+          <div className="container mediation-grid">
+            {mediationServices.map((service) => (
+              <article className="dark-card" key={service.title}>
+                <span aria-hidden="true">◆</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section proof" id="experience" aria-labelledby="proof-heading">
           <div className="container proof-grid">
             <div>
               <p className="eyebrow">Why The Firm Feels Different</p>
@@ -237,19 +289,13 @@ export default function Home() {
             <div>
               <p className="eyebrow">Consultation Requests</p>
               <h2 id="contact-heading">Tell the firm what happened, who is involved, and what needs to happen next.</h2>
-              <div className="contact-facts" aria-label="Contact details">
-                <div>
-                  <span>Email</span>
-                  <a href="mailto:info@huanglawfl.com">info@huanglawfl.com</a>
-                </div>
-                <div>
-                  <span>Availability</span>
-                  <p>Consultations by appointment</p>
-                </div>
-                <div>
-                  <span>Service Area</span>
-                  <p>Florida legal matters</p>
-                </div>
+              <div className="contact-card">
+                <p>For consultations, mediation availability, or general firm inquiries, contact Huang Law, P.A.</p>
+                <dl>
+                  <div><dt>Phone</dt><dd><a href="tel:+12132593316">{phone}</a></dd></div>
+                  <div><dt>Email</dt><dd><a href={`mailto:${email}`}>{email}</a></dd></div>
+                  <div><dt>Office</dt><dd>{officeAddress}</dd></div>
+                </dl>
               </div>
             </div>
             <ConsultationForm />
@@ -270,6 +316,7 @@ export default function Home() {
             <h2>Navigation</h2>
             <a href="#services">Services</a>
             <a href="#attorney">Attorney</a>
+            <a href="#experience">Why Choose Us</a>
             <a href="#process">Process</a>
             <a href="#languages">Languages</a>
             <a href="#contact">Contact</a>
@@ -280,18 +327,20 @@ export default function Home() {
           </div>
           <div>
             <h2>Contact</h2>
-            <p>Email: info@huanglawfl.com</p>
+            <p>Phone: {phone}</p>
+            <p>Email: {email}</p>
+            <p>Office: {officeAddress}</p>
             <p>Consultations by appointment</p>
-            <p>Florida legal matters</p>
           </div>
         </div>
         <div className="container footer-bottom">
           <p>
-            Attorney Advertising. The information on this website is for general informational purposes only and does not constitute legal advice. Viewing this website or contacting Huang Law, P.A. does not create an attorney-client relationship.
+            Attorney Advertising. Haidan "Daniel" Huang, Florida Bar No. 1023249. The information on this website is for general informational purposes only and does not constitute legal advice. Viewing this website or contacting Huang Law, P.A. does not create an attorney-client relationship.
           </p>
           <div>
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms of Use</a>
+            <a href="/disclaimer">Disclaimer</a>
           </div>
         </div>
       </footer>

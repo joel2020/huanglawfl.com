@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://huanglawfl.com";
   const lastModified = new Date();
 
-  return ["/", "/privacy", "/terms"].map((path) => ({
+  return ["/", "/privacy", "/terms", "/disclaimer"].map((path) => ({
     url: `${baseUrl}${path === "/" ? "" : path}`,
     lastModified,
     changeFrequency: "monthly",
