@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             <div className="hero-portrait" aria-label={`Portrait of ${site.attorney}`}>
               <Image
-                src="/images/mr-huang.png"
+                src="/images/mr-huang-hero.png"
                 alt={`${site.attorney}, Florida attorney and certified mediator`}
                 width={720}
                 height={896}
