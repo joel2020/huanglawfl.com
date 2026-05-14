@@ -1,34 +1,35 @@
 import Image from "next/image";
 import { ConsultationForm } from "@/components/ConsultationForm";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
+import { QuickActions } from "@/components/QuickActions";
+import {
+  credentials,
+  firmAddressSchema,
+  firmLegalServiceSchema,
+  legalDisclaimer,
+  serviceCards,
+  site,
+  trustItems,
+  whoWeHelp,
+} from "@/lib/site";
 
-const siteUrl = "https://huanglawfl.com";
-const phone = "(213) 259-3316";
-const email = "info@huanglawfl.com";
-const officeAddress = "2139 N. University Dr., #5184, Coral Springs, FL 33071";
-
-const credibility = [
-  { value: "FL", label: "Licensed Florida Attorney" },
-  { value: "MED", label: "Florida Supreme Court Certified Mediator" },
-  { value: "FED", label: "Middle and Southern Districts of Florida" },
-  { value: "3", label: "English, Mandarin, and Spanish" },
-];
-
-const services = [
+const process = [
   {
-    title: "Business and Civil Litigation",
+    title: "Conflict and Intake Review",
     description:
-      "Focused representation for commercial conflicts, civil disputes, contract claims, and matters that need disciplined case strategy.",
+      "The firm identifies the parties, county, documents, timing, preferred language, and whether the matter fits the firm's practice.",
   },
   {
-    title: "Certified Mediation",
+    title: "Attorney-Led Strategy",
     description:
-      "Structured mediation for parties who need a practical path toward resolution while controlling cost, risk, and uncertainty.",
+      "Clients work directly with counsel to define the objective, pressure points, likely costs, and realistic next steps.",
   },
   {
-    title: "Contracts, Real Estate, and Cross-Border Counsel",
+    title: "Resolution or Litigation Plan",
     description:
-      "Clear guidance for agreements, property disputes, negotiations, and multilingual matters involving Florida clients and international concerns.",
+      "The firm prepares for negotiation, mediation, or litigation with attention to evidence, leverage, and practical outcome.",
   },
 ];
 
@@ -36,7 +37,7 @@ const mediationServices = [
   {
     title: "Business & Commercial Disputes",
     description:
-      "Neutral facilitation for partnership conflicts, business torts, contract disputes, and commercial matters — helping parties reach durable, cost-effective outcomes without prolonged litigation.",
+      "Neutral facilitation for partnership conflicts, business torts, contract disputes, and commercial matters, helping parties evaluate durable and cost-conscious resolution options.",
   },
   {
     title: "Contract & Real Estate Disputes",
@@ -46,35 +47,7 @@ const mediationServices = [
   {
     title: "Civil & General Litigation Matters",
     description:
-      "Skilled facilitation for a broad range of civil disputes, with a focus on reducing cost, preserving relationships, and reaching practical resolutions faster than trial.",
-  },
-];
-
-const credentials = [
-  "Florida Bar No. 1023249",
-  "J.D., University of Miami School of Law",
-  "B.A., University of Connecticut",
-  "Licensed to practice law throughout Florida",
-  "Admitted in the Middle and Southern District Courts of Florida",
-  "Florida Supreme Court Certified Mediator",
-  "Fluent in English, Mandarin, and Spanish",
-];
-
-const process = [
-  {
-    title: "Conflict and Intake Review",
-    description:
-      "The first step is a focused intake review so the firm can understand the parties, urgency, language needs, and legal posture.",
-  },
-  {
-    title: "Attorney-Led Strategy",
-    description:
-      "Clients work directly with counsel to define the objective, pressure points, likely costs, and the cleanest path forward.",
-  },
-  {
-    title: "Resolution or Litigation Plan",
-    description:
-      "The firm prepares for negotiation, mediation, or litigation with the same attention to evidence, leverage, and practical outcome.",
+      "Skilled facilitation for civil disputes with a focus on reducing cost, preserving workable relationships, and exploring practical resolutions faster than trial.",
   },
 ];
 
@@ -84,39 +57,36 @@ const languages = [
   ["Spanish", "Accessible guidance for Spanish-speaking clients across Florida"],
 ];
 
-export default function Home() {
-  const legalJsonLd = {
+function personSchema() {
+  return {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    name: "Huang Law, P.A.",
-    url: siteUrl,
-    telephone: phone,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "2139 N. University Dr., #5184",
-      addressLocality: "Coral Springs",
-      addressRegion: "FL",
-      postalCode: "33071",
-      addressCountry: "US",
+    "@type": "Person",
+    name: site.schemaAttorneyName,
+    alternateName: site.attorney,
+    jobTitle: "Managing Partner, Florida Attorney, and Florida Supreme Court Certified Mediator",
+    worksFor: {
+      "@type": "LegalService",
+      name: site.name,
+      url: site.url,
     },
-    areaServed: "Florida",
-    founder: {
-      "@type": "Person",
-      name: "Haidan Huang",
-      alumniOf: ["University of Miami School of Law", "University of Connecticut"],
-      knowsLanguage: ["English", "Mandarin", "Spanish"],
-      jobTitle: "Florida Attorney and Florida Supreme Court Certified Mediator",
-    },
-    knowsAbout: [
-      "Business litigation",
-      "Civil litigation",
-      "Certified mediation",
-      "Contract disputes",
-      "Real estate disputes",
-      "Multilingual legal counsel",
-    ],
+    alumniOf: ["University of Miami School of Law", "University of Connecticut"],
+    knowsLanguage: site.languages,
   };
+}
 
+function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: site.name,
+    url: site.url,
+    telephone: site.phone,
+    email: site.email,
+    address: firmAddressSchema(),
+  };
+}
+
+export default function Home() {
   return (
     <>
       <Header />
@@ -125,57 +95,70 @@ export default function Home() {
           <div className="hero-grid container">
             <div className="hero-copy">
               <p className="eyebrow">Florida Litigation, Mediation, and Multilingual Counsel</p>
-              <h1 id="hero-title">Direct attorney judgment for disputes that need a serious plan.</h1>
+              <h1 id="hero-title">Strategic Litigation, Mediation, and Multilingual Counsel for High-Stakes Florida Matters.</h1>
               <p className="hero-lede">
-                Huang Law, P.A. represents Florida clients in business disputes, civil matters, mediation, contracts, real estate conflicts, and cross-border legal concerns.
+                Huang Law, P.A. is a boutique Florida law firm for business owners, professionals, families, and international clients who need direct attorney access, disciplined legal strategy, and clear communication in English, Mandarin, or Spanish.
               </p>
               <div className="hero-actions">
-                <a className="button button-gold" href="#contact">Request a Consultation</a>
-                <a className="button button-ghost" href="#credentials">View Credentials</a>
+                <a className="button button-gold" href="#contact">Request a Confidential Consultation</a>
+                <a className="button button-ghost" href="#credentials">View Attorney Credentials</a>
               </div>
-              <div className="hero-note">
-                <strong>Direct attorney access.</strong>
-                <span>Consultations by appointment. English, Mandarin, and Spanish available.</span>
-              </div>
+              <QuickActions />
             </div>
-            <div className="hero-portrait" aria-label="Portrait of Haidan Daniel Huang">
+            <div className="hero-portrait" aria-label={`Portrait of ${site.attorney}`}>
               <Image
                 src="/images/mr-huang.png"
-                alt="Haidan Daniel Huang, Florida attorney and certified mediator"
-                width={900}
-                height={1120}
+                alt={`${site.attorney}, Florida attorney and certified mediator`}
+                width={720}
+                height={896}
+                sizes="(max-width: 840px) 92vw, 430px"
                 priority
               />
               <div className="portrait-caption">
-                <strong>Haidan "Daniel" Huang</strong>
-                <span>Florida Attorney and Supreme Court Certified Mediator</span>
+                <strong>{site.attorney}</strong>
+                <span>Managing Partner, Florida Attorney, and Supreme Court Certified Mediator</span>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="credibility-strip" id="credentials" aria-label="Huang Law credentials">
-          <div className="credibility-grid container">
-            {credibility.map((item) => (
-              <div className="credibility-item" key={item.label}>
-                <span>{item.value}</span>
-                <p>{item.label}</p>
-              </div>
+        <section className="trust-strip" id="credentials" aria-label="Huang Law credentials">
+          <div className="trust-grid container">
+            {trustItems.map((item) => (
+              <span key={item}>{item}</span>
             ))}
           </div>
         </section>
 
         <section className="section services" id="services" aria-labelledby="services-heading">
           <div className="container section-intro">
-            <p className="eyebrow">Focused Counsel</p>
-            <h2 id="services-heading">Built for clients who value preparation, discretion, and clear legal judgment.</h2>
+            <p className="eyebrow">Focused Florida Counsel</p>
+            <h2 id="services-heading">Conservative practice areas for serious legal pressure.</h2>
+            <p>
+              The firm focuses on disputes, mediation, contracts, real estate conflicts, and multilingual legal guidance. No outcome is promised. The priority is disciplined strategy and clear communication.
+            </p>
           </div>
-          <div className="service-grid container">
-            {services.map((service, index) => (
-              <article className="service-card" key={service.title}>
+          <div className="service-grid service-grid-wide container">
+            {serviceCards.map((service, index) => (
+              <a className="service-card" key={service.href} href={service.href}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="section who-help" id="who-we-help" aria-labelledby="who-heading">
+          <div className="container section-intro centered">
+            <p className="eyebrow">Who We Help</p>
+            <h2 id="who-heading">Built for clients who need judgment, language clarity, and a practical plan.</h2>
+          </div>
+          <div className="container help-grid">
+            {whoWeHelp.map((item) => (
+              <article className="help-card" key={item}>
+                <span aria-hidden="true">HL</span>
+                <h3>{item}</h3>
               </article>
             ))}
           </div>
@@ -185,16 +168,17 @@ export default function Home() {
           <div className="attorney-image">
             <Image
               src="/images/mr-huang.png"
-              alt="Professional portrait of Haidan Daniel Huang"
-              width={900}
-              height={1120}
+              alt={`Professional portrait of ${site.attorney}`}
+              width={720}
+              height={896}
+              sizes="(max-width: 840px) 100vw, 470px"
             />
           </div>
           <div className="attorney-copy">
             <p className="eyebrow">Attorney Profile</p>
             <h2 id="attorney-heading">A boutique practice led by the attorney clients actually work with.</h2>
             <p>
-              Haidan "Daniel" Huang is a Florida attorney, Managing Partner of Huang Law, P.A., and Florida Supreme Court Certified Mediator. His practice focuses on litigation, dispute resolution, and strategic counsel for clients who need direct communication and practical execution.
+              {site.attorney} is a Florida attorney, Managing Partner of Huang Law, P.A., and Florida Supreme Court Certified Mediator. His practice focuses on litigation, dispute resolution, contracts, real estate disputes, and multilingual counsel for clients who need direct communication and practical execution.
             </p>
             <div className="credential-list" aria-label="Attorney credentials">
               {credentials.map((credential) => (
@@ -208,10 +192,10 @@ export default function Home() {
           <div className="container split-heading">
             <div>
               <p className="eyebrow">Certified Mediation</p>
-              <h2 id="mediation-heading">Focused mediation for business, real estate, and civil disputes.</h2>
+              <h2 id="mediation-heading">Private dispute resolution for business, real estate, and civil matters.</h2>
             </div>
             <p>
-              As a Florida Supreme Court Certified Mediator, Haidan "Daniel" Huang helps parties work through disputes with preparation, confidentiality, and attention to practical outcomes.
+              As a Florida Supreme Court Certified Mediator, {site.attorney} helps parties work through disputes with preparation, confidentiality, and attention to practical outcomes.
             </p>
           </div>
           <div className="container mediation-grid">
@@ -228,20 +212,20 @@ export default function Home() {
         <section className="section proof" id="experience" aria-labelledby="proof-heading">
           <div className="container proof-grid">
             <div>
-              <p className="eyebrow">Why The Firm Feels Different</p>
+              <p className="eyebrow">Why Choose Us</p>
               <h2 id="proof-heading">Smaller by design. Senior attention by default.</h2>
             </div>
             <div className="proof-panel">
               <div>
-                <strong>Selective matters</strong>
-                <p>The firm is positioned for clients who need judgment, not volume processing.</p>
+                <strong>Direct attorney access</strong>
+                <p>Clients work with counsel directly instead of being pushed through a high-volume intake machine.</p>
               </div>
               <div>
                 <strong>Mediation perspective</strong>
-                <p>Every dispute is evaluated through leverage, cost, risk, and the possibility of resolution.</p>
+                <p>Disputes are evaluated through leverage, cost, risk, and the possibility of resolution.</p>
               </div>
               <div>
-                <strong>Multilingual access</strong>
+                <strong>Multilingual clarity</strong>
                 <p>Clients can discuss sensitive legal issues in English, Mandarin, or Spanish.</p>
               </div>
             </div>
@@ -270,7 +254,7 @@ export default function Home() {
               <p className="eyebrow">Multilingual Counsel</p>
               <h2 id="language-heading">Legal guidance in English, Mandarin, and Spanish.</h2>
               <p>
-                Clear communication matters when the dispute, transaction, or family concern crosses languages, cultures, or borders.
+                Clear communication matters when a dispute, transaction, family concern, or Florida legal issue crosses languages, cultures, or borders.
               </p>
             </div>
             <div className="language-panel" aria-label="Languages offered">
@@ -290,11 +274,11 @@ export default function Home() {
               <p className="eyebrow">Consultation Requests</p>
               <h2 id="contact-heading">Tell the firm what happened, who is involved, and what needs to happen next.</h2>
               <div className="contact-card">
-                <p>For consultations, mediation availability, or general firm inquiries, contact Huang Law, P.A.</p>
+                <p>{legalDisclaimer}</p>
                 <dl>
-                  <div><dt>Phone</dt><dd><a href="tel:+12132593316">{phone}</a></dd></div>
-                  <div><dt>Email</dt><dd><a href={`mailto:${email}`}>{email}</a></dd></div>
-                  <div><dt>Office</dt><dd>{officeAddress}</dd></div>
+                  <div><dt>Phone</dt><dd><a href={site.phoneHref}>{site.phone}</a></dd></div>
+                  <div><dt>Email</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+                  <div><dt>Office</dt><dd>{site.address}</dd></div>
                 </dl>
               </div>
             </div>
@@ -302,49 +286,11 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer className="footer">
-        <div className="container footer-grid">
-          <div>
-            <a className="brand footer-brand" href="#top" aria-label="Huang Law home">
-              <span className="brand-mark" aria-hidden="true">HL</span>
-              <span className="brand-text"><span>Huang Law</span><em>P.A.</em></span>
-            </a>
-            <p>Business litigation, mediation, and multilingual legal counsel for Florida clients.</p>
-          </div>
-          <nav aria-label="Footer navigation">
-            <h2>Navigation</h2>
-            <a href="#services">Services</a>
-            <a href="#attorney">Attorney</a>
-            <a href="#experience">Why Choose Us</a>
-            <a href="#process">Process</a>
-            <a href="#languages">Languages</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <div>
-            <h2>Services</h2>
-            {services.map((service) => <a key={service.title} href="#services">{service.title}</a>)}
-          </div>
-          <div>
-            <h2>Contact</h2>
-            <p>Phone: {phone}</p>
-            <p>Email: {email}</p>
-            <p>Office: {officeAddress}</p>
-            <p>Consultations by appointment</p>
-          </div>
-        </div>
-        <div className="container footer-bottom">
-          <p>
-            Attorney Advertising. Haidan "Daniel" Huang, Florida Bar No. 1023249. The information on this website is for general informational purposes only and does not constitute legal advice. Viewing this website or contacting Huang Law, P.A. does not create an attorney-client relationship.
-          </p>
-          <div>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Use</a>
-            <a href="/disclaimer">Disclaimer</a>
-          </div>
-        </div>
-      </footer>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(legalJsonLd) }} />
+      <a className="mobile-sticky-cta" href="#contact">Request Consultation</a>
+      <Footer />
+      <JsonLd data={firmLegalServiceSchema()} />
+      <JsonLd data={personSchema()} />
+      <JsonLd data={localBusinessSchema()} />
     </>
   );
 }

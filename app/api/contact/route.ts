@@ -1,12 +1,20 @@
-const recipientEmail = "info@huanglawfl.com";
-const allowedSubjects = new Set(["Consultation Request", "Mediation Inquiry", "General Question"]);
+import { countyOptions, matterTypes, site, urgencyOptions } from "@/lib/site";
+
+const allowedLanguages = new Set(site.languages);
+const allowedMatterTypes = new Set(matterTypes);
+const allowedCounties = new Set(countyOptions);
+const allowedUrgency = new Set(urgencyOptions);
 
 type ContactPayload = {
-  name?: string;
+  fullName?: string;
   email?: string;
   phone?: string;
-  subject?: string;
-  message?: string;
+  preferredLanguage?: string;
+  matterType?: string;
+  county?: string;
+  opposingParties?: string;
+  urgency?: string;
+  description?: string;
   consent?: boolean;
 };
 
@@ -14,23 +22,29 @@ function json(body: unknown, status = 200) {
   return Response.json(body, { status });
 }
 
-function buildMailto(payload: Required<Pick<ContactPayload, "name" | "email" | "subject" | "message">> & Pick<ContactPayload, "phone">) {
-  const subject = encodeURIComponent(`${payload.subject} - Huang Law, P.A.`);
-  const body = encodeURIComponent(
-    [
-      `Name: ${payload.name}`,
-      `Email: ${payload.email}`,
-      `Phone: ${payload.phone || "Not provided"}`,
-      `Subject: ${payload.subject}`,
-      "",
-      "Message:",
-      payload.message,
-      "",
-      "Consent: I understand this form does not create an attorney-client relationship.",
-    ].join("\n"),
-  );
+function bodyLines(payload: Required<Omit<ContactPayload, "consent">>) {
+  return [
+    `Full name: ${payload.fullName}`,
+    `Email: ${payload.email}`,
+    `Phone: ${payload.phone}`,
+    `Preferred language: ${payload.preferredLanguage}`,
+    `Matter type: ${payload.matterType}`,
+    `County: ${payload.county}`,
+    `Opposing party / parties: ${payload.opposingParties}`,
+    `Urgency: ${payload.urgency}`,
+    "",
+    "Brief description:",
+    payload.description,
+    "",
+    "Consent: I understand this form does not create an attorney-client relationship.",
+  ];
+}
 
-  return `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+function buildMailto(payload: Required<Omit<ContactPayload, "consent">>) {
+  const subject = encodeURIComponent(`${payload.matterType} - Huang Law consultation request`);
+  const body = encodeURIComponent(bodyLines(payload).join("\n"));
+
+  return `mailto:${site.email}?subject=${subject}&body=${body}`;
 }
 
 export async function POST(request: Request) {
@@ -40,25 +54,40 @@ export async function POST(request: Request) {
     return json({ error: "Invalid request." }, 400);
   }
 
-  const name = payload.name?.trim() || "";
+  const fullName = payload.fullName?.trim() || "";
   const email = payload.email?.trim() || "";
   const phone = payload.phone?.trim() || "";
-  const subject = payload.subject?.trim() || "";
-  const message = payload.message?.trim() || "";
+  const preferredLanguage = payload.preferredLanguage?.trim() || "";
+  const matterType = payload.matterType?.trim() || "";
+  const county = payload.county?.trim() || "";
+  const opposingParties = payload.opposingParties?.trim() || "";
+  const urgency = payload.urgency?.trim() || "";
+  const description = payload.description?.trim() || "";
 
-  if (!name || !email || !subject || !message) {
-    return json({ error: "Name, email, subject, and message are required." }, 400);
+  if (!fullName || !email || !phone || !preferredLanguage || !matterType || !county || !opposingParties || !urgency || !description) {
+    return json({ error: "Please complete all required fields." }, 400);
   }
 
   if (!payload.consent) {
     return json({ error: "Please acknowledge that this form does not create an attorney-client relationship." }, 400);
   }
 
-  if (!allowedSubjects.has(subject)) {
-    return json({ error: "Please choose a valid subject." }, 400);
+  if (!allowedLanguages.has(preferredLanguage) || !allowedMatterTypes.has(matterType) || !allowedCounties.has(county) || !allowedUrgency.has(urgency)) {
+    return json({ error: "Please choose valid form options." }, 400);
   }
 
-  const mailto = buildMailto({ name, email, phone, subject, message });
+  const cleanPayload = {
+    fullName,
+    email,
+    phone,
+    preferredLanguage,
+    matterType,
+    county,
+    opposingParties,
+    urgency,
+    description,
+  };
+  const mailto = buildMailto(cleanPayload);
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
@@ -73,20 +102,10 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       from: process.env.RESEND_FROM_EMAIL || "Huang Law Website <onboarding@resend.dev>",
-      to: [process.env.CONTACT_TO_EMAIL || recipientEmail],
+      to: [process.env.CONTACT_TO_EMAIL || site.email],
       reply_to: email,
-      subject: `${subject} - Huang Law, P.A.`,
-      text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone || "Not provided"}`,
-        `Subject: ${subject}`,
-        "",
-        "Message:",
-        message,
-        "",
-        "Consent: I understand this form does not create an attorney-client relationship.",
-      ].join("\n"),
+      subject: `${matterType} - Huang Law consultation request`,
+      text: bodyLines(cleanPayload).join("\n"),
     }),
   });
 

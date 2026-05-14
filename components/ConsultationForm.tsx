@@ -1,8 +1,9 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { countyOptions, matterTypes, urgencyOptions } from "@/lib/site";
 
-const subjects = ["Consultation Request", "Mediation Inquiry", "General Question"];
+const languageOptions = ["English", "Mandarin", "Spanish"];
 
 type ContactResponse = {
   ok?: boolean;
@@ -13,6 +14,23 @@ type ContactResponse = {
 export function ConsultationForm() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [matterType, setMatterType] = useState(matterTypes[0]);
+
+  useEffect(() => {
+    function handleMatterSelect(event: Event) {
+      const customEvent = event as CustomEvent<string>;
+      const selected = customEvent.detail;
+
+      if (selected && matterTypes.includes(selected)) {
+        setMatterType(selected);
+      }
+
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    window.addEventListener("huanglaw:select-matter", handleMatterSelect);
+    return () => window.removeEventListener("huanglaw:select-matter", handleMatterSelect);
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,11 +38,15 @@ export function ConsultationForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const payload = {
-      name: String(formData.get("name") || ""),
+      fullName: String(formData.get("fullName") || ""),
       email: String(formData.get("email") || ""),
       phone: String(formData.get("phone") || ""),
-      subject: String(formData.get("subject") || ""),
-      message: String(formData.get("message") || ""),
+      preferredLanguage: String(formData.get("preferredLanguage") || ""),
+      matterType: String(formData.get("matterType") || ""),
+      county: String(formData.get("county") || ""),
+      opposingParties: String(formData.get("opposingParties") || ""),
+      urgency: String(formData.get("urgency") || ""),
+      description: String(formData.get("description") || ""),
       consent: formData.get("consent") === "on",
     };
 
@@ -51,6 +73,7 @@ export function ConsultationForm() {
 
       setStatus("Your message was sent to Huang Law, P.A.");
       form.reset();
+      setMatterType(matterTypes[0]);
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "The message could not be sent.");
     } finally {
@@ -59,35 +82,63 @@ export function ConsultationForm() {
   }
 
   return (
-    <form className="intake-form" onSubmit={handleSubmit}>
+    <form className="intake-form" id="consultation-form" onSubmit={handleSubmit}>
       <div className="form-grid">
         <label>
-          <span>Name</span>
-          <input name="name" type="text" autoComplete="name" required />
+          <span>Full name</span>
+          <input name="fullName" type="text" autoComplete="name" required />
         </label>
         <label>
           <span>Email</span>
           <input name="email" type="email" autoComplete="email" required />
         </label>
         <label>
-          <span>Phone <em>optional</em></span>
-          <input name="phone" type="tel" autoComplete="tel" />
+          <span>Phone</span>
+          <input name="phone" type="tel" autoComplete="tel" required />
         </label>
         <label>
-          <span>Subject</span>
-          <select name="subject" defaultValue={subjects[0]} required>
-            {subjects.map((subject) => (
-              <option key={subject}>{subject}</option>
+          <span>Preferred language</span>
+          <select name="preferredLanguage" defaultValue="English" required>
+            {languageOptions.map((language) => (
+              <option key={language}>{language}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>Matter type</span>
+          <select name="matterType" value={matterType} onChange={(event) => setMatterType(event.target.value)} required>
+            {matterTypes.map((matter) => (
+              <option key={matter}>{matter}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>County</span>
+          <select name="county" defaultValue="Miami-Dade" required>
+            {countyOptions.map((county) => (
+              <option key={county}>{county}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>Opposing party / parties</span>
+          <input name="opposingParties" type="text" placeholder="Names for conflict check" required />
+        </label>
+        <label>
+          <span>Urgency</span>
+          <select name="urgency" defaultValue="This week" required>
+            {urgencyOptions.map((urgency) => (
+              <option key={urgency}>{urgency}</option>
             ))}
           </select>
         </label>
       </div>
       <label>
-        <span>Message</span>
+        <span>Brief description</span>
         <textarea
-          name="message"
+          name="description"
           rows={5}
-          placeholder="Share a brief summary of the matter. Do not include confidential details until the firm confirms representation."
+          placeholder="Share a brief non-confidential summary of the matter, current deadline, and what outcome you need."
           required
         />
       </label>
@@ -96,10 +147,10 @@ export function ConsultationForm() {
         <span>I understand this form does not create an attorney-client relationship.</span>
       </label>
       <p className="form-disclaimer">
-        Submitting this request does not create an attorney-client relationship. Do not include confidential details until the firm confirms representation.
+        Submitting this form does not create an attorney-client relationship. Please do not include confidential information until an attorney-client relationship has been formally established.
       </p>
       <button className="button button-gold" type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Preparing Request" : "Send Message"}
+        {isSubmitting ? "Preparing Request" : "Request a Confidential Consultation"}
       </button>
       {status ? <p className="form-status" role="status">{status}</p> : null}
     </form>

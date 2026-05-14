@@ -3,12 +3,11 @@
 import { useState } from "react";
 
 const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "Attorney", href: "#attorney" },
-  { label: "Mediation", href: "#mediation" },
-  { label: "Why Choose Us", href: "#experience" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Who We Help", href: "/#who-we-help" },
+  { label: "Attorney", href: "/#attorney" },
+  { label: "Mediation", href: "/mediation-attorney-miami" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -16,7 +15,7 @@ export function Header() {
 
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Huang Law home">
+      <a className="brand" href="/#top" aria-label="Huang Law home">
         <span className="brand-mark" aria-hidden="true">HL</span>
         <span className="brand-text">
           <span>Huang Law</span>
@@ -43,8 +42,8 @@ export function Header() {
             {item.label}
           </a>
         ))}
-        <a className="button button-outline nav-cta" href="#contact" onClick={() => setIsOpen(false)}>
-          Schedule a Consultation
+        <a className="button button-outline nav-cta" href="/#contact" onClick={() => setIsOpen(false)}>
+          Request Consultation
         </a>
       </nav>
     </header>

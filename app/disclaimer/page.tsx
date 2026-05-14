@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Disclaimer",
   description: "Attorney advertising, privacy, and no attorney-client relationship notices for Huang Law, P.A.",
+  alternates: { canonical: "/disclaimer" },
 };
 
 export default function Disclaimer() {
@@ -26,7 +27,7 @@ export default function Disclaimer() {
         </p>
         <h2>Privacy and Contact Form Data</h2>
         <p>
-          Information submitted through the contact form may include name, email, phone number, subject, and message content. The firm uses that information to review inquiries, evaluate conflicts, and respond to prospective clients. Do not submit confidential information until the firm confirms representation.
+          Information submitted through the contact form may include name, email, phone number, preferred language, matter type, county, opposing party information, urgency, and a brief description. The firm uses that information to review inquiries, evaluate conflicts, and respond to prospective clients. Do not submit confidential information until the firm confirms representation.
         </p>
       </div>
     </main>
