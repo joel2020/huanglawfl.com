@@ -18,11 +18,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://huanglawfl.com"),
   title: {
-    default: "Huang Law, P.A. | Florida Attorney & Certified Mediator",
+    default: "Huang Law, P.A. | Florida Litigation, Mediation & Multilingual Counsel",
     template: "%s | Huang Law, P.A.",
   },
   description:
-    "Huang Law, P.A. provides strategic legal counsel, mediation, and multilingual representation across Florida. Led by Mr. Huang, a Florida attorney and Supreme Court Certified Mediator fluent in English, Mandarin, and Spanish.",
+    "Huang Law, P.A. provides business litigation, certified mediation, contract, real estate, and multilingual legal counsel for Florida clients.",
   keywords: [
     "Florida attorney",
     "Florida mediator",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Huang Law, P.A. | Florida Attorney & Certified Mediator",
+    title: "Huang Law, P.A. | Florida Litigation, Mediation & Multilingual Counsel",
     description:
-      "Strategic legal counsel, certified mediation, and multilingual representation across Florida state and federal courts.",
+      "Business litigation, certified mediation, contract, real estate, and multilingual legal counsel for Florida clients.",
     url: "https://huanglawfl.com",
     siteName: "Huang Law, P.A.",
     images: [
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Huang Law, P.A. | Florida Attorney & Certified Mediator",
+    title: "Huang Law, P.A. | Florida Litigation, Mediation & Multilingual Counsel",
     description:
-      "Florida attorney and Supreme Court Certified Mediator fluent in English, Mandarin, and Spanish.",
+      "Florida legal counsel for disputes, mediation, contracts, real estate, and multilingual matters.",
     images: ["/images/huang-law-og.svg"],
   },
   robots: {

@@ -3,11 +3,10 @@
 import { useState } from "react";
 
 const navItems = [
-  { label: "Practice Areas", href: "#practice-areas" },
-  { label: "About", href: "#about" },
-  { label: "Mediation", href: "#mediation" },
-  { label: "Results & Experience", href: "#experience" },
-  { label: "Resources", href: "#resources" },
+  { label: "Services", href: "#services" },
+  { label: "Attorney", href: "#attorney" },
+  { label: "Process", href: "#process" },
+  { label: "Languages", href: "#languages" },
   { label: "Contact", href: "#contact" },
 ];
 
