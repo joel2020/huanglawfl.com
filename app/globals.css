@@ -267,6 +267,7 @@ h3 { font-size: 1.62rem; }
   align-items: flex-end;
   justify-content: center;
   min-height: 710px;
+  overflow: hidden;
   background: linear-gradient(180deg, rgba(255, 250, 242, .08), rgba(255, 250, 242, .02));
   border-left: 1px solid rgba(217, 206, 192, .16);
   border-right: 1px solid rgba(217, 206, 192, .16);
@@ -274,7 +275,8 @@ h3 { font-size: 1.62rem; }
 
 .hero-portrait img {
   width: 100%;
-  height: 660px;
+  height: 780px;
+  margin-top: -70px;
   object-fit: cover;
   object-position: center top;
 }
@@ -477,7 +479,8 @@ h3 { font-size: 1.62rem; }
 
 .attorney-image img {
   width: 100%;
-  height: 610px;
+  height: 680px;
+  margin-top: -42px;
   object-fit: cover;
   object-position: center 14%;
 }
@@ -1063,7 +1066,7 @@ h3 { font-size: 1.62rem; }
     min-height: auto;
     border-top: 1px solid rgba(217, 206, 192, .16);
   }
-  .hero-portrait img { height: 560px; }
+  .hero-portrait img { height: 640px; margin-top: -54px; }
   h1 { font-size: 3.72rem; }
   h2 { font-size: 2.82rem; }
   .attorney-section { padding-bottom: 78px; }
@@ -1089,7 +1092,7 @@ h3 { font-size: 1.62rem; }
   h2 { font-size: 2.35rem; }
   h3 { font-size: 1.42rem; }
   .hero-copy { padding-top: 48px; }
-  .hero-portrait img { height: 460px; }
+  .hero-portrait img { height: 530px; margin-top: -46px; }
   .portrait-caption {
     right: 14px;
     bottom: 14px;
