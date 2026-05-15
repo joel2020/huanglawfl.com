@@ -138,7 +138,7 @@ export default function Home() {
           </div>
           <div className="attorney-copy">
             <p className="eyebrow">Attorney Profile</p>
-            <h2 id="attorney-heading">Michael Huang is litigation counsel, mediator, and multilingual advisor for Florida matters.</h2>
+            <h2 id="attorney-heading">Dan Huang is litigation counsel, mediator, and multilingual advisor for Florida matters.</h2>
             <p>
               {site.attorney} advises clients, referral attorneys, and institutional stakeholders in matters that require clear judgment, procedural command, and disciplined communication.
             </p>
@@ -158,7 +158,7 @@ export default function Home() {
               <h2 id="mediation-heading">Certified mediation for parties seeking a structured path to resolution.</h2>
             </div>
             <p>
-              As a Florida Supreme Court Certified Mediator, Michael Huang helps parties work through business, creditor, probate, civil, and financial disputes with confidentiality and practical focus.
+              As a Florida Supreme Court Certified Mediator, Mr. Huang helps parties work through business, creditor, probate, civil, and financial disputes with confidentiality and practical focus.
             </p>
           </div>
         </section>

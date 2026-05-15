@@ -7,9 +7,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { attorneySchema, credentials, firmLegalServiceSchema, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Michael Huang | Florida Attorney and Certified Mediator",
+  title: "About Dan Huang | Florida Attorney and Certified Mediator",
   description:
-    "Michael Huang is a Florida attorney, certified mediator, and multilingual advisor serving law firms, businesses, financial institutions, creditors, and sophisticated clients.",
+    "Dan Huang is a Florida attorney, certified mediator, and multilingual advisor serving law firms, businesses, financial institutions, creditors, and sophisticated clients.",
   alternates: { canonical: "/about" },
 };
 
@@ -29,7 +29,7 @@ export default function AboutPage() {
           <div className="container subpage-hero-grid">
             <div>
               <p className="eyebrow">Attorney Profile</p>
-              <h1>Michael Huang, Esq.</h1>
+              <h1>Dan Huang</h1>
               <p>
                 Florida litigation counsel, certified mediator, and multilingual advisor for clients who need strategic judgment in serious disputes and cross-border matters.
               </p>
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <p className="eyebrow">Counsel And Mediator</p>
             <h2 id="profile-heading">A strategic Florida resource for law firms, institutions, and sophisticated clients.</h2>
             <p>
-              Michael Huang represents clients in matters that require precise issue spotting, careful document review, procedural judgment, and direct attorney communication. His practice is built for disputes where the legal path must account for business consequences, recovery strategy, timing, and settlement leverage.
+              Mr. Huang represents clients in matters that require precise issue spotting, careful document review, procedural judgment, and direct attorney communication. His practice is built for disputes where the legal path must account for business consequences, recovery strategy, timing, and settlement leverage.
             </p>
             <div className="list-panel profile-list">
               {profilePoints.map((point) => <span key={point}>{point}</span>)}

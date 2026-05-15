@@ -1,7 +1,7 @@
 export const site = {
   name: "Huang Law PLLC",
-  attorney: "Michael Huang, Esq.",
-  schemaAttorneyName: "Michael Huang",
+  attorney: "Dan Huang",
+  schemaAttorneyName: "Dan Huang",
   url: "https://www.huanglawfl.com",
   phone: "305-389-3339",
   phoneHref: "tel:+13053893339",
@@ -303,7 +303,7 @@ export const landingPages: LandingPage[] = [
     eyebrow: "Mediation",
     h1: "Certified mediation for parties seeking a disciplined path to resolution.",
     intro:
-      "As a Florida Supreme Court Certified Mediator, Michael Huang helps parties evaluate risk, cost, evidence, timing, and settlement options in a confidential setting.",
+      "As a Florida Supreme Court Certified Mediator, Mr. Huang helps parties evaluate risk, cost, evidence, timing, and settlement options in a confidential setting.",
     helps: ["Business and commercial disputes", "Creditor and financial disputes", "Civil litigation matters", "Probate and fiduciary disputes", "Pre-suit dispute resolution"],
     why: ["Florida Supreme Court Certified Mediator", "Litigation-aware facilitation", "Calm, structured process", "Multilingual communication"],
     faqs: [
@@ -395,7 +395,6 @@ export function attorneySchema() {
     "@type": "Attorney",
     "@id": `${site.url}/#attorney`,
     name: site.schemaAttorneyName,
-    honorificSuffix: "Esq.",
     jobTitle: "Florida Attorney and Florida Supreme Court Certified Mediator",
     worksFor: {
       "@id": `${site.url}/#legalservice`,
@@ -430,10 +429,10 @@ export function faqSchema() {
       },
       {
         "@type": "Question",
-        name: "What languages does Michael Huang speak?",
+        name: "What languages does Dan Huang speak?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Michael Huang is fluent in English, Mandarin, and Spanish.",
+          text: "Dan Huang is fluent in English, Mandarin, and Spanish.",
         },
       },
     ],
