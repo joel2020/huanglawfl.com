@@ -18,9 +18,10 @@ export const legalDisclaimer =
   "Attorney Advertising. This website is for general informational purposes only and does not constitute legal advice. Contacting Huang Law PLLC does not create an attorney-client relationship.";
 
 export const trustItems = [
+  "Creditor and lender representation",
+  "Banking and enforcement disputes",
   "Florida local counsel",
   "Federal and state court litigation",
-  "Creditor and lender representation",
   "Certified mediation",
 ];
 
@@ -35,18 +36,18 @@ export const credentials = [
 
 export const practiceAreas = [
   {
-    title: "General Civil Litigation",
-    href: "/practice-areas#general-civil-litigation",
-    keyword: "Florida business litigation attorney",
-    description:
-      "Representation in business disputes, contract matters, partnership conflicts, and complex litigation in Florida state and federal courts.",
-  },
-  {
     title: "Creditor's Rights",
     href: "/practice-areas#creditors-rights",
     keyword: "Florida creditor rights lawyer",
     description:
       "Strategic representation for secured and unsecured creditors in collections, enforcement actions, and insolvency proceedings.",
+  },
+  {
+    title: "Banking Law",
+    href: "/practice-areas#banking-law",
+    keyword: "Florida banking law attorney",
+    description:
+      "Advising lenders and financial institutions in loan disputes, enforcement matters, and related litigation.",
   },
   {
     title: "Bankruptcy",
@@ -56,11 +57,11 @@ export const practiceAreas = [
       "Counsel to creditors, trustees, and businesses in Chapter 7, Chapter 11, and Chapter 13 proceedings.",
   },
   {
-    title: "Banking Law",
-    href: "/practice-areas#banking-law",
-    keyword: "Florida banking law attorney",
+    title: "General Civil Litigation",
+    href: "/practice-areas#general-civil-litigation",
+    keyword: "Florida business litigation attorney",
     description:
-      "Advising lenders and financial institutions in loan disputes, enforcement matters, and related litigation.",
+      "Representation in business disputes, contract matters, partnership conflicts, and complex litigation in Florida state and federal courts.",
   },
   {
     title: "Probate Law",
@@ -88,12 +89,12 @@ export const audiences = [
 ];
 
 export const quickActions = [
-  "Civil litigation",
   "Creditor's rights",
-  "Bankruptcy",
   "Banking law",
+  "Bankruptcy",
+  "Civil litigation",
+  "Local counsel",
   "Probate",
-  "Immigration",
 ];
 
 export const matterTypes = [

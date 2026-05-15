@@ -49,7 +49,7 @@ export function Header() {
           </Link>
         ))}
         <Link className="button button-outline nav-cta" href="/contact" onClick={() => setIsOpen(false)}>
-          Schedule a Consultation
+          Discuss Your Matter
         </Link>
       </nav>
     </header>

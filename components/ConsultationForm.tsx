@@ -121,8 +121,8 @@ export function ConsultationForm() {
           </select>
         </label>
         <label>
-          <span>Opposing party / parties</span>
-          <input name="opposingParties" type="text" placeholder="Names for conflict check" required />
+          <span>Adverse party / parties</span>
+          <input name="opposingParties" type="text" placeholder="Names needed for conflict review" required />
         </label>
         <label>
           <span>Urgency</span>
@@ -134,11 +134,11 @@ export function ConsultationForm() {
         </label>
       </div>
       <label>
-        <span>Brief description</span>
+        <span>Non-confidential summary</span>
         <textarea
           name="description"
           rows={5}
-          placeholder="Share a brief non-confidential summary, the parties involved, the forum or county, any deadline, and the result you need."
+          placeholder="Briefly identify the issue, amount or asset at stake if relevant, court or county, deadline, and what needs to happen next."
           required
         />
       </label>
@@ -147,10 +147,10 @@ export function ConsultationForm() {
         <span>I understand this form does not create an attorney-client relationship.</span>
       </label>
       <p className="form-disclaimer">
-        Submitting this form does not create an attorney-client relationship. Please do not include confidential information until an attorney-client relationship has been formally established.
+        The firm uses this information to assess conflicts, fit, urgency, and next steps. Do not include confidential facts until representation is confirmed in writing.
       </p>
       <button className="button button-gold" type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Preparing Request" : "Schedule a Consultation"}
+        {isSubmitting ? "Preparing Request" : "Submit Intake Summary"}
       </button>
       {status ? <p className="form-status" role="status">{status}</p> : null}
     </form>

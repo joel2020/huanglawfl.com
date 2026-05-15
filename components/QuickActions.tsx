@@ -3,12 +3,12 @@
 import { matterTypes, quickActions } from "@/lib/site";
 
 const actionToMatter: Record<string, string> = {
-  "Civil litigation": "General Civil Litigation",
   "Creditor's rights": "Creditor's Rights",
-  Bankruptcy: "Bankruptcy",
   "Banking law": "Banking Law",
+  Bankruptcy: "Bankruptcy",
+  "Civil litigation": "General Civil Litigation",
+  "Local counsel": "Florida local counsel",
   Probate: "Probate Law",
-  Immigration: "Immigration",
 };
 
 export function QuickActions() {

@@ -19,11 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.huanglawfl.com"),
   title: {
-    default: "Huang Law PLLC | Florida Litigation, Creditor Rights, Banking, Probate & Immigration Counsel",
+    default: "Huang Law PLLC | Florida Creditor Rights, Banking Disputes & Local Counsel",
     template: "%s | Huang Law PLLC",
   },
   description:
-    "Strategic Florida counsel for complex litigation, creditor rights, bankruptcy, banking law, probate law, immigration, mediation, and local counsel engagements.",
+    "Strategic Florida counsel for creditors, lenders, financial institutions, banking disputes, enforcement litigation, business disputes, mediation, and local counsel engagements.",
   keywords: [
     "Florida business litigation attorney",
     "Florida creditor rights lawyer",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Huang Law PLLC | Strategic Florida Counsel",
+    title: "Huang Law PLLC | Florida Creditor Rights, Banking Disputes & Local Counsel",
     description:
-      "Florida litigation, creditor rights, bankruptcy, banking law, probate, immigration, mediation, and local counsel for sophisticated clients.",
+      "Florida counsel for creditors, lenders, financial institutions, banking disputes, enforcement litigation, business disputes, mediation, and local counsel engagements.",
     url: "https://www.huanglawfl.com",
     siteName: "Huang Law PLLC",
     images: [
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         url: "/images/huang-law-og.svg",
         width: 1200,
         height: 630,
-        alt: "Huang Law PLLC navy and gold wordmark",
+        alt: "Huang Law PLLC wordmark",
       },
     ],
     locale: "en_US",
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Huang Law PLLC | Strategic Florida Counsel",
+    title: "Huang Law PLLC | Florida Creditor Rights, Banking Disputes & Local Counsel",
     description:
-      "Strategic Florida counsel for litigation, creditor rights, bankruptcy, banking, probate, immigration, mediation, and local counsel.",
+      "Strategic Florida counsel for creditors, lenders, banking disputes, enforcement litigation, business disputes, mediation, and local counsel.",
     images: ["/images/huang-law-og.svg"],
   },
   robots: {

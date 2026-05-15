@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: "/images/huang-law-og.svg",
           width: 1200,
           height: 630,
-          alt: "Huang Law PLLC navy and gold wordmark",
+          alt: "Huang Law PLLC wordmark",
         },
       ],
     },
