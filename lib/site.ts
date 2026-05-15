@@ -21,8 +21,6 @@ export const trustItems = [
   "Creditor and lender representation",
   "Banking and enforcement disputes",
   "Florida local counsel",
-  "Federal and state court litigation",
-  "Certified mediation",
 ];
 
 export const credentials = [
@@ -86,15 +84,6 @@ export const audiences = [
   "Banks and financial institutions",
   "Creditors, lenders, and trustees",
   "Businesses, entrepreneurs, and sophisticated individuals",
-];
-
-export const quickActions = [
-  "Creditor's rights",
-  "Banking law",
-  "Bankruptcy",
-  "Civil litigation",
-  "Local counsel",
-  "Probate",
 ];
 
 export const matterTypes = [

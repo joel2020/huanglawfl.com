@@ -5,10 +5,8 @@ import { ConsultationForm } from "@/components/ConsultationForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { QuickActions } from "@/components/QuickActions";
 import {
   attorneySchema,
-  credentials,
   faqSchema,
   firmLegalServiceSchema,
   legalDisclaimer,
@@ -17,21 +15,24 @@ import {
   trustItems,
 } from "@/lib/site";
 
+const corePracticeAreas = practiceAreas.slice(0, 4);
+const secondaryPracticeAreas = practiceAreas.slice(4);
+
 const whyItems = [
   {
-    title: "Commercial judgment before escalation",
+    title: "Commercial discipline before escalation",
     description:
-      "Claims are evaluated through evidence, leverage, forum, cost, collectability, and the business consequences of each procedural move.",
+      "Each matter is evaluated through evidence, leverage, forum, cost, collectability, and business consequences before the next move is made.",
   },
   {
-    title: "A Florida resource for counsel",
+    title: "Useful to referral and national counsel",
     description:
-      "The firm works with referral counsel, national firms, and in-house teams that need Florida procedure, hearing support, and reliable local judgment.",
+      "The firm supports lawyers and legal departments that need Florida procedure, hearing support, and reliable local judgment.",
   },
   {
-    title: "Financial dispute fluency",
+    title: "Built around financial disputes",
     description:
-      "Banking, creditor, bankruptcy-related, and enforcement matters are handled with attention to documentation, recovery posture, and timing.",
+      "Banking, creditor, bankruptcy-related, and enforcement matters are handled with attention to documents, recovery posture, and timing.",
   },
 ];
 
@@ -48,23 +49,25 @@ const whoWeServe = [
     title: "Referral counsel and national firms",
     description: "Florida court support for out-of-state lawyers, national firms, and legal departments.",
   },
-  {
-    title: "Sophisticated individual matters",
-    description: "Probate, immigration, multilingual, and cross-border issues where strategy and discretion matter.",
-  },
 ];
 
-const representativeMatters = [
-  "Creditor claims and enforcement actions",
-  "Banking and loan litigation",
-  "Bankruptcy-related creditor issues",
-  "Judgment recovery strategy",
-  "Borrower and guarantor disputes",
-  "Business and contract disputes",
-  "Florida local counsel engagements",
-  "Probate administration and fiduciary disputes",
-  "Business and family-based immigration",
-  "Mediation of financial and commercial disputes",
+const authorityItems = [
+  {
+    label: "Admissions",
+    value: "Florida state courts and U.S. District Courts for the Middle and Southern Districts of Florida",
+  },
+  {
+    label: "Mediation",
+    value: "Florida Supreme Court Certified Mediator for civil, commercial, probate, creditor, and financial disputes",
+  },
+  {
+    label: "Languages",
+    value: "English, Mandarin, and Spanish",
+  },
+  {
+    label: "Counsel role",
+    value: "Direct attorney attention for clients, referral counsel, national firms, and legal departments",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -101,35 +104,31 @@ export default function Home() {
       <main id="top">
         <section className="hero text-hero" aria-labelledby="hero-title">
           <div className="container hero-copy">
-            <p className="eyebrow">Florida creditor rights, banking disputes, enforcement litigation, and local counsel</p>
-            <h1 id="hero-title">Florida Counsel for Creditors, Lenders, and High-Value Business Disputes</h1>
+            <p className="eyebrow">Florida creditor rights, banking disputes, and local counsel</p>
+            <h1 id="hero-title">Florida counsel for creditors, lenders, and business disputes.</h1>
             <p className="hero-lede">
-              Huang Law PLLC represents creditors, lenders, financial institutions, businesses, and referral counsel in matters involving enforcement, loan disputes, insolvency risk, and Florida litigation.
+              Huang Law PLLC represents financial institutions, businesses, and referral counsel in enforcement actions, loan disputes, insolvency-related matters, and Florida litigation.
             </p>
             <div className="hero-actions">
               <Link className="button button-gold" href="/contact">Discuss Your Matter</Link>
-              <Link className="button button-ghost" href="/practice-areas">Review Practice Areas</Link>
+              <Link className="button button-ghost" href="/practice-areas">Practice Areas</Link>
             </div>
-            <QuickActions />
-          </div>
-        </section>
-
-        <section className="trust-strip" aria-label="Huang Law credentials">
-          <div className="container trust-grid">
-            {trustItems.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
+            <div className="hero-trust" aria-label="Huang Law credentials">
+              {trustItems.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="section audience-section" aria-labelledby="audience-heading">
           <div className="container split-heading light">
             <div>
-              <p className="eyebrow">Who The Firm Serves</p>
-              <h2 id="audience-heading">Built for clients whose disputes involve recovery, leverage, and Florida procedure.</h2>
+              <p className="eyebrow">Who We Serve</p>
+              <h2 id="audience-heading">For matters where recovery, leverage, and Florida procedure matter.</h2>
             </div>
             <p>
-              The homepage is intentionally weighted toward creditor, lender, banking, enforcement, business dispute, and local counsel needs. Probate and immigration remain available when the matter calls for that support.
+              The firm is built for creditor, lender, banking, enforcement, business dispute, and local counsel needs. Other practice areas remain available when they fit the matter.
             </p>
           </div>
           <div className="container audience-grid">
@@ -146,10 +145,10 @@ export default function Home() {
         <section className="section services" id="services" aria-labelledby="services-heading">
           <div className="container section-intro">
             <p className="eyebrow">Practice Areas</p>
-            <h2 id="services-heading">Core Florida services for financial disputes, enforcement, litigation, and related matters.</h2>
+            <h2 id="services-heading">Core commercial services for financial disputes, enforcement, and litigation.</h2>
           </div>
           <div className="container service-grid">
-            {practiceAreas.map((service, index) => (
+            {corePracticeAreas.map((service, index) => (
               <Link className="service-card" key={service.title} href={service.href}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{service.title}</h3>
@@ -157,22 +156,15 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </section>
-
-        <section className="section matters-section" aria-labelledby="matters-heading">
-          <div className="container split-heading light">
+          <div className="container secondary-practices" aria-label="Additional capabilities">
+            <p>Additional capabilities</p>
             <div>
-              <p className="eyebrow">Representative Matter Types</p>
-              <h2 id="matters-heading">Financial disputes rarely stay in one procedural lane.</h2>
+              {secondaryPracticeAreas.map((service) => (
+                <Link key={service.title} href={service.href}>{service.title}</Link>
+              ))}
+              <Link href="/florida-certified-mediator">Mediation</Link>
+              <Link href="/florida-local-counsel">Florida Local Counsel</Link>
             </div>
-            <p>
-              A creditor issue may become bankruptcy-related. A loan dispute may require emergency enforcement. A business case may turn on mediation posture or local Florida procedure.
-            </p>
-          </div>
-          <div className="container matter-list" aria-label="Representative matter types">
-            {representativeMatters.map((matter) => (
-              <Link key={matter} href="/practice-areas">{matter}</Link>
-            ))}
           </div>
         </section>
 
@@ -193,7 +185,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="attorney-section container" id="attorney" aria-labelledby="attorney-heading">
+        <section className="attorney-section attorney-authority container" id="attorney" aria-labelledby="attorney-heading">
           <div className="attorney-image">
             <Image
               src="/images/mr-huang.png"
@@ -205,14 +197,17 @@ export default function Home() {
             />
           </div>
           <div className="attorney-copy">
-            <p className="eyebrow">Attorney Profile</p>
-            <h2 id="attorney-heading">Dan Huang advises clients, lawyers, and institutions in Florida matters requiring careful judgment.</h2>
+            <p className="eyebrow">Attorney and Mediator</p>
+            <h2 id="attorney-heading">Dan Huang brings Florida litigation judgment to financial and business disputes.</h2>
             <p>
-              Mr. Huang is a Florida attorney, federal court practitioner, Florida Supreme Court Certified Mediator, and multilingual advisor. He works with clients and referral counsel in English, Mandarin, and Spanish.
+              Mr. Huang advises creditors, lenders, businesses, and referral counsel in matters that require measured advocacy, procedural command, and direct attorney attention.
             </p>
-            <div className="credential-list" aria-label="Attorney credentials">
-              {credentials.map((credential) => (
-                <span key={credential}>{credential}</span>
+            <div className="authority-list" aria-label="Attorney credentials">
+              {authorityItems.map((item) => (
+                <div key={item.label}>
+                  <span>{item.label}</span>
+                  <p>{item.value}</p>
+                </div>
               ))}
             </div>
             <Link className="text-link" href="/about">Read Attorney Profile</Link>
