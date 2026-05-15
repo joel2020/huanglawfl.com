@@ -1,13 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
+import { site } from "@/lib/site";
 
 const navItems = [
-  { label: "Services", href: "/#services" },
-  { label: "Who We Help", href: "/#who-we-help" },
-  { label: "Attorney", href: "/#attorney" },
-  { label: "Mediation", href: "/mediation-attorney-miami" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Practice Areas", href: "/practice-areas" },
+  { label: "About", href: "/about" },
+  { label: "Mediation", href: "/florida-certified-mediator" },
+  { label: "Local Counsel", href: "/florida-local-counsel" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -15,13 +17,17 @@ export function Header() {
 
   return (
     <header className="site-header">
-      <a className="brand" href="/#top" aria-label="Huang Law home">
+      <Link className="brand" href="/#top" aria-label="Huang Law home">
         <span className="brand-mark" aria-hidden="true">HL</span>
         <span className="brand-text">
           <span>Huang Law</span>
           <em>P.A.</em>
         </span>
-      </a>
+      </Link>
+
+      <div className="header-contact">
+        <a href={site.phoneHref}>{site.phone}</a>
+      </div>
 
       <button
         className="menu-toggle"
@@ -38,13 +44,13 @@ export function Header() {
 
       <nav id="primary-navigation" className={isOpen ? "nav open" : "nav"} aria-label="Primary navigation">
         {navItems.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
+          <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
             {item.label}
-          </a>
+          </Link>
         ))}
-        <a className="button button-outline nav-cta" href="/#contact" onClick={() => setIsOpen(false)}>
-          Request Consultation
-        </a>
+        <Link className="button button-outline nav-cta" href="/contact" onClick={() => setIsOpen(false)}>
+          Schedule a Consultation
+        </Link>
       </nav>
     </header>
   );

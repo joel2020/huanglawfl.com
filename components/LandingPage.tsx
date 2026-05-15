@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { firmLegalServiceSchema, LandingPage as LandingPageData, legalDisclaimer, site } from "@/lib/site";
 
-function faqSchema(page: LandingPageData) {
+function landingFaqSchema(page: LandingPageData) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -50,17 +51,17 @@ export function LandingPage({ page }: { page: LandingPageData }) {
             <div>
               <p className="eyebrow">{page.eyebrow}</p>
               <h1>{page.h1}</h1>
-              <p>{page.localIntro}</p>
+              <p>{page.intro}</p>
               <div className="hero-actions">
-                <a className="button button-gold" href="#contact">Request a Confidential Consultation</a>
-                <a className="button button-ghost" href="/#attorney">View Attorney Credentials</a>
+                <Link className="button button-gold" href="/contact">Schedule a Consultation</Link>
+                <Link className="button button-ghost" href="/about">View Attorney Profile</Link>
               </div>
             </div>
             <aside className="subpage-card" aria-label="Firm credentials">
               <strong>Huang Law, P.A.</strong>
-              <span>Florida attorney and Supreme Court Certified Mediator</span>
+              <span>Florida litigation, creditor, banking, probate, immigration, and mediation counsel</span>
               <span>English, Mandarin, and Spanish</span>
-              <span>{site.phone}</span>
+              <span><a href={site.phoneHref}>{site.phone}</a></span>
             </aside>
           </div>
         </section>
@@ -68,7 +69,7 @@ export function LandingPage({ page }: { page: LandingPageData }) {
         <section className="section page-section">
           <div className="container three-column">
             <div>
-              <p className="eyebrow">What The Firm Helps With</p>
+              <p className="eyebrow">Scope</p>
               <h2>Focused support for the issues that usually drive the matter.</h2>
             </div>
             <div className="list-panel">
@@ -81,27 +82,11 @@ export function LandingPage({ page }: { page: LandingPageData }) {
           <div className="container three-column">
             <div>
               <p className="eyebrow">Why Huang Law</p>
-              <h2>Direct access, multilingual communication, and litigation-aware judgment.</h2>
+              <h2>Precise counsel for serious Florida legal and financial disputes.</h2>
             </div>
             <div className="list-panel">
               {page.why.map((item) => <span key={item}>{item}</span>)}
             </div>
-          </div>
-        </section>
-
-        <section className="section page-section">
-          <div className="container section-intro centered">
-            <p className="eyebrow">Process</p>
-            <h2>A measured path from intake to next step.</h2>
-          </div>
-          <div className="container process-grid">
-            {page.process.map((step, index) => (
-              <article className="process-step" key={step}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{index === 0 ? "Review" : index === 1 ? "Evaluate" : "Act"}</h3>
-                <p>{step}</p>
-              </article>
-            ))}
           </div>
         </section>
 
@@ -123,7 +108,7 @@ export function LandingPage({ page }: { page: LandingPageData }) {
         <section className="final-cta" id="contact" aria-labelledby="landing-contact-heading">
           <div className="container cta-grid">
             <div>
-              <p className="eyebrow">Consultation Requests</p>
+              <p className="eyebrow">Contact Huang Law</p>
               <h2 id="landing-contact-heading">Send the firm a focused, non-confidential intake summary.</h2>
               <div className="contact-card">
                 <p>{legalDisclaimer}</p>
@@ -140,7 +125,7 @@ export function LandingPage({ page }: { page: LandingPageData }) {
       </main>
       <Footer />
       <JsonLd data={firmLegalServiceSchema()} />
-      <JsonLd data={faqSchema(page)} />
+      <JsonLd data={landingFaqSchema(page)} />
       <JsonLd data={breadcrumbSchema(page)} />
     </>
   );

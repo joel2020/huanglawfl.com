@@ -1,42 +1,43 @@
-import { legalDisclaimer, serviceCards, site } from "@/lib/site";
+import Link from "next/link";
+import { legalDisclaimer, practiceAreas, site } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <a className="brand footer-brand" href="/#top" aria-label="Huang Law home">
+          <Link className="brand footer-brand" href="/#top" aria-label="Huang Law home">
             <span className="brand-mark" aria-hidden="true">HL</span>
             <span className="brand-text"><span>Huang Law</span><em>P.A.</em></span>
-          </a>
-          <p>Business disputes, civil litigation, mediation, real estate disputes, and multilingual legal counsel for Florida clients.</p>
+          </Link>
+          <p>Strategic Florida counsel for litigation, creditor rights, bankruptcy, banking law, probate, immigration, mediation, and local counsel engagements.</p>
         </div>
         <nav aria-label="Footer navigation">
           <h2>Navigation</h2>
-          <a href="/#services">Services</a>
-          <a href="/#who-we-help">Who We Help</a>
-          <a href="/#attorney">Attorney</a>
-          <a href="/#experience">Why Choose Us</a>
-          <a href="/#contact">Contact</a>
+          <Link href="/practice-areas">Practice Areas</Link>
+          <Link href="/about">About</Link>
+          <Link href="/florida-local-counsel">Local Counsel</Link>
+          <Link href="/florida-certified-mediator">Mediation</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
         <div>
-          <h2>Services</h2>
-          {serviceCards.map((service) => <a key={service.href} href={service.href}>{service.title}</a>)}
+          <h2>Practice Areas</h2>
+          {practiceAreas.map((service) => <Link key={service.href} href={service.href}>{service.title}</Link>)}
         </div>
         <div>
           <h2>Contact</h2>
-          <p>Phone: {site.phone}</p>
-          <p>Email: {site.email}</p>
-          <p>Office: {site.address}</p>
+          <p><a href={site.phoneHref}>{site.phone}</a></p>
+          <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p>{site.address}</p>
           <p>Consultations by appointment</p>
         </div>
       </div>
       <div className="container footer-bottom">
-        <p>{legalDisclaimer} {site.attorney}, Florida Bar No. {site.barNumber}.</p>
+        <p>{legalDisclaimer}</p>
         <div>
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-use">Terms of Use</a>
-          <a href="/disclaimer">Disclaimer</a>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/terms-of-use">Terms of Use</Link>
+          <Link href="/disclaimer">Disclaimer</Link>
         </div>
       </div>
     </footer>

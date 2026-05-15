@@ -1,666 +1,349 @@
 export const site = {
   name: "Huang Law, P.A.",
-  attorney: 'Haidan "Daniel" Huang',
-  schemaAttorneyName: "Haidan Huang",
-  barNumber: "1023249",
-  url: "https://huanglawfl.com",
-  phone: "(213) 259-3316",
-  phoneHref: "tel:+12132593316",
-  email: "info@huanglawfl.com",
-  addressLine: "2139 N. University Dr., #5184",
+  attorney: "Michael Huang, Esq.",
+  schemaAttorneyName: "Michael Huang",
+  url: "https://www.huanglawfl.com",
+  phone: "305-389-3339",
+  phoneHref: "tel:+13053893339",
+  email: "dan@huanglawfl.com",
+  addressLine: "2139 North University Drive, #5184",
   city: "Coral Springs",
   state: "FL",
   postalCode: "33071",
-  address: "2139 N. University Dr., #5184, Coral Springs, FL 33071",
+  address: "2139 North University Drive, #5184, Coral Springs, FL 33071",
   languages: ["English", "Mandarin", "Spanish"],
 };
 
+export const legalDisclaimer =
+  "Attorney Advertising. This website is for general informational purposes only and does not constitute legal advice. Contacting Huang Law, P.A. does not create an attorney-client relationship.";
+
 export const trustItems = [
-  "Florida Licensed Attorney",
-  "Florida Supreme Court Certified Mediator",
-  "Middle & Southern Districts of Florida",
-  "English • Mandarin • Spanish",
+  "Florida local counsel",
+  "Federal and state court litigation",
+  "Creditor and lender representation",
+  "Certified mediation",
 ];
 
 export const credentials = [
-  "Florida Bar No. 1023249",
   "J.D., University of Miami School of Law",
   "B.A., University of Connecticut",
-  "Licensed to practice law throughout Florida",
-  "Admitted in the Middle and Southern District Courts of Florida",
+  "Licensed to practice throughout Florida",
+  "Admitted to the U.S. District Courts for the Middle and Southern Districts of Florida",
   "Florida Supreme Court Certified Mediator",
   "Fluent in English, Mandarin, and Spanish",
 ];
 
-export const serviceCards = [
+export const practiceAreas = [
   {
-    title: "Business & Contract Disputes",
-    href: "/business-litigation-attorney-miami",
+    title: "General Civil Litigation",
+    href: "/practice-areas#general-civil-litigation",
+    keyword: "Florida business litigation attorney",
     description:
-      "Strategic counsel for business owners, professionals, and companies dealing with contract breaches, partnership tension, commercial claims, and negotiation pressure.",
+      "Representation in business disputes, contract matters, partnership conflicts, and complex litigation in Florida state and federal courts.",
   },
   {
-    title: "Civil Litigation",
-    href: "/civil-litigation-attorney-miami",
+    title: "Creditor's Rights",
+    href: "/practice-areas#creditors-rights",
+    keyword: "Florida creditor rights lawyer",
     description:
-      "Focused representation for civil disputes that require disciplined analysis, court awareness, and a practical plan before positions harden.",
+      "Strategic representation for secured and unsecured creditors in collections, enforcement actions, and insolvency proceedings.",
   },
   {
-    title: "Mediation & Dispute Resolution",
-    href: "/mediation-attorney-miami",
+    title: "Bankruptcy",
+    href: "/practice-areas#bankruptcy",
+    keyword: "Florida bankruptcy attorney",
     description:
-      "Confidential mediation support from a Florida Supreme Court Certified Mediator for parties seeking a controlled path toward resolution.",
+      "Counsel to creditors, trustees, and businesses in Chapter 7, Chapter 11, and Chapter 13 proceedings.",
   },
   {
-    title: "Real Estate Disputes",
-    href: "/real-estate-dispute-attorney-miami",
+    title: "Banking Law",
+    href: "/practice-areas#banking-law",
+    keyword: "Florida banking law attorney",
     description:
-      "Guidance for property disagreements, lease issues, buyer and seller disputes, investor concerns, and contract interpretation matters.",
+      "Advising lenders and financial institutions in loan disputes, enforcement matters, and related litigation.",
   },
   {
-    title: "Multilingual Legal Counsel",
-    href: "/multilingual-attorney-miami",
+    title: "Probate Law",
+    href: "/practice-areas#probate-law",
+    keyword: "Florida probate litigation lawyer",
     description:
-      "Clear legal communication in English, Mandarin, and Spanish for clients who need Florida counsel without language friction.",
+      "Guidance in probate administration, fiduciary disputes, contested estates, and related litigation.",
+  },
+  {
+    title: "Immigration",
+    href: "/practice-areas#immigration",
+    keyword: "Florida immigration lawyer",
+    description:
+      "Business and family-based immigration services delivered with practical and strategic counsel.",
   },
 ];
 
-export const whoWeHelp = [
-  "Business owners in contract or partnership disputes",
-  "Real estate buyers, sellers, landlords, and investors",
-  "Professionals facing civil claims or negotiation pressure",
-  "International clients with Florida legal concerns",
-  "Parties seeking private mediation",
-  "Chinese-speaking and Spanish-speaking clients who need clear legal guidance",
+export const audiences = [
+  "Law firms seeking Florida local counsel",
+  "Referral attorneys and co-counsel",
+  "Corporate legal departments",
+  "Banks and financial institutions",
+  "Creditors, lenders, and trustees",
+  "Businesses, entrepreneurs, and sophisticated individuals",
 ];
 
 export const quickActions = [
-  "Business dispute",
-  "Mediation",
-  "Contract issue",
-  "Real estate dispute",
-  "Multilingual legal help",
-  "Not sure where to start",
+  "Civil litigation",
+  "Creditor's rights",
+  "Bankruptcy",
+  "Banking law",
+  "Probate",
+  "Immigration",
 ];
 
 export const matterTypes = [
-  "Business dispute",
+  "General Civil Litigation",
+  "Creditor's Rights",
+  "Bankruptcy",
+  "Banking Law",
+  "Probate Law",
+  "Immigration",
+  "Florida local counsel",
   "Mediation",
-  "Contract issue",
-  "Real estate dispute",
-  "Multilingual legal help",
-  "Civil litigation",
-  "Not sure where to start",
+  "Other complex matter",
 ];
 
 export const urgencyOptions = ["Urgent", "This week", "Within 30 days", "Planning ahead"];
-export const countyOptions = ["Miami-Dade", "Broward", "Palm Beach", "Other Florida county", "Not sure"];
-
-export const legalDisclaimer =
-  "Attorney Advertising. This website is for general informational purposes only and does not constitute legal advice. Viewing this website or contacting Huang Law, P.A. does not create an attorney-client relationship.";
+export const countyOptions = ["Miami-Dade", "Broward", "Palm Beach", "Other Florida county", "Federal matter", "Not sure"];
 
 export type LandingPage = {
   slug: string;
-  kind: "service" | "city";
   title: string;
   metaTitle: string;
   description: string;
   eyebrow: string;
   h1: string;
-  localIntro: string;
+  intro: string;
   helps: string[];
   why: string[];
-  process: string[];
   faqs: { question: string; answer: string }[];
-  relatedLinks: { label: string; href: string }[];
 };
 
-const conservativeFaqs = {
-  consultation: {
-    question: "Does contacting the firm create an attorney-client relationship?",
+const intakeFaqs = [
+  {
+    question: "Does contacting Huang Law create an attorney-client relationship?",
     answer:
-      "No. Contacting Huang Law, P.A. or submitting a form does not create an attorney-client relationship. Representation begins only after the firm confirms the engagement in writing.",
+      "No. Representation begins only after the firm completes a conflict review and confirms the engagement in writing.",
   },
-  confidential: {
-    question: "Should I send confidential documents through the website?",
+  {
+    question: "Should confidential information be sent through the website?",
     answer:
-      "No. Prospective clients should not send confidential information until the firm confirms it can review the matter and represent them.",
+      "No. Prospective clients should send only a brief, non-confidential summary until the firm confirms it can review the matter.",
   },
-};
+];
 
 export const landingPages: LandingPage[] = [
   {
-    slug: "business-litigation-attorney-miami",
-    kind: "service",
-    title: "Business Litigation Attorney Miami",
-    metaTitle: "Business Litigation Attorney Miami | Huang Law, P.A.",
+    slug: "florida-business-litigation-attorney",
+    title: "Florida Business Litigation Attorney",
+    metaTitle: "Florida Business Litigation Attorney | Huang Law, P.A.",
     description:
-      "Miami business litigation counsel for contract disputes, partnership conflicts, commercial claims, and negotiation strategy.",
+      "Florida business litigation counsel for contract disputes, commercial claims, partnership conflicts, and complex civil litigation.",
     eyebrow: "Business Litigation",
-    h1: "Business litigation counsel for Miami-area disputes that need a disciplined plan.",
-    localIntro:
-      "Miami-Dade businesses often face legal pressure before a dispute becomes a lawsuit. Huang Law, P.A. helps business owners and professionals evaluate the facts, leverage, documents, and next steps with direct attorney involvement.",
-    helps: [
-      "Contract breaches and payment disputes",
-      "Partnership and ownership conflicts",
-      "Commercial claims and pre-suit negotiations",
-      "Business tort and civil dispute strategy",
-      "Mediation preparation for business disputes",
-    ],
-    why: [
-      "Direct access to a Florida attorney",
-      "Certified mediation perspective on risk and resolution",
-      "English, Mandarin, and Spanish communication",
-      "Conservative, evidence-focused case positioning",
-    ],
-    process: [
-      "Review the dispute, parties, documents, and business objective.",
-      "Assess negotiation, mediation, and litigation options.",
-      "Build a practical plan for communication, leverage, and next steps.",
-    ],
+    h1: "Florida business litigation counsel for disputes with financial and strategic consequences.",
+    intro:
+      "Huang Law represents businesses, owners, referral attorneys, and legal departments in commercial disputes that require disciplined analysis, precise pleadings, and practical judgment.",
+    helps: ["Contract and payment disputes", "Partnership and ownership conflicts", "Business tort claims", "Pre-suit strategy and mediation", "State and federal court litigation"],
+    why: ["Direct attorney attention", "Florida state and federal court admissions", "Mediation-informed litigation judgment", "English, Mandarin, and Spanish fluency"],
     faqs: [
-      { question: "Can Huang Law review a business dispute before a lawsuit is filed?", answer: "Yes. The firm can help evaluate a business dispute before litigation begins, including contract terms, communications, risk, and practical next steps." },
-      { question: "Does every business dispute need litigation?", answer: "No. Many business disputes can be positioned for negotiation or mediation. The right path depends on the facts, documents, urgency, and goals." },
-      { question: "Can the firm help with mediation preparation?", answer: "Yes. Huang Law, P.A. can help clients prepare for mediation by organizing issues, documents, leverage, and settlement objectives." },
-      { question: "What should I gather before contacting the firm?", answer: "Helpful materials include contracts, invoices, emails, demand letters, timelines, and names of all parties involved." },
-      conservativeFaqs.consultation,
-      conservativeFaqs.confidential,
-    ],
-    relatedLinks: [
-      { label: "Contract Disputes", href: "/contract-disputes-attorney-miami" },
-      { label: "Mediation", href: "/mediation-attorney-miami" },
+      {
+        question: "Does Huang Law serve as Florida local counsel?",
+        answer:
+          "Yes. The firm can support out-of-state attorneys and law firms in Florida litigation, local procedure, filings, hearings, and dispute strategy.",
+      },
+      {
+        question: "Can business disputes be evaluated before suit is filed?",
+        answer:
+          "Yes. Early review can clarify leverage, evidence, forum, cost, and whether negotiation, mediation, or litigation is the right next step.",
+      },
+      ...intakeFaqs,
     ],
   },
   {
-    slug: "civil-litigation-attorney-miami",
-    kind: "service",
-    title: "Civil Litigation Attorney Miami",
-    metaTitle: "Civil Litigation Attorney Miami | Huang Law, P.A.",
+    slug: "florida-creditor-rights-lawyer",
+    title: "Florida Creditor Rights Lawyer",
+    metaTitle: "Florida Creditor Rights Lawyer | Huang Law, P.A.",
     description:
-      "Civil litigation counsel for Miami-area clients facing claims, disputes, negotiation pressure, or mediation.",
-    eyebrow: "Civil Litigation",
-    h1: "Civil litigation guidance for Miami-area clients facing serious disputes.",
-    localIntro:
-      "Civil claims can move quickly. Huang Law, P.A. helps clients understand the dispute, preserve important information, evaluate risk, and respond with a measured litigation or resolution strategy.",
-    helps: [
-      "Civil claims and pre-suit disputes",
-      "Demand letters and response strategy",
-      "Negotiation and mediation planning",
-      "Document review and factual timelines",
-      "Court-aware dispute positioning",
-    ],
-    why: [
-      "Florida state and federal court admissions",
-      "Practical evaluation of cost, leverage, and risk",
-      "Direct attorney communication",
-      "Multilingual support when language clarity matters",
-    ],
-    process: [
-      "Identify the claims, parties, deadlines, and evidence.",
-      "Discuss response options and potential resolution paths.",
-      "Prepare the next step with attention to legal and practical consequences.",
-    ],
+      "Florida creditor rights representation for secured and unsecured creditors in enforcement, collections, and insolvency matters.",
+    eyebrow: "Creditor's Rights",
+    h1: "Strategic creditor representation in Florida enforcement and insolvency matters.",
+    intro:
+      "The firm represents creditors, lenders, and institutional clients in matters where recovery strategy, timing, documentation, and forum selection matter.",
+    helps: ["Secured and unsecured creditor claims", "Collections and enforcement actions", "Judgment recovery strategy", "Insolvency and bankruptcy proceedings", "Negotiation and settlement positioning"],
+    why: ["Commercially focused counsel", "Bankruptcy and litigation perspective", "Measured enforcement strategy", "Responsive support for institutional clients"],
     faqs: [
-      { question: "When should I contact a civil litigation attorney?", answer: "It is often useful to contact counsel as soon as a dispute, demand, threatened lawsuit, or formal claim appears." },
-      { question: "Can Huang Law help before a case is filed?", answer: "Yes. Pre-suit strategy can be important for preserving evidence, avoiding mistakes, and evaluating resolution options." },
-      { question: "Is mediation available for civil disputes?", answer: "Many civil disputes can be mediated. Whether mediation is appropriate depends on the parties, facts, and procedural posture." },
-      { question: "Does the firm guarantee outcomes?", answer: "No. No attorney can guarantee a result. The firm focuses on careful analysis, strategy, and communication." },
-      conservativeFaqs.consultation,
-    ],
-    relatedLinks: [
-      { label: "Business Litigation", href: "/business-litigation-attorney-miami" },
-      { label: "Mediation", href: "/mediation-attorney-miami" },
+      {
+        question: "Can the firm represent institutional creditors?",
+        answer:
+          "Yes. Huang Law represents creditors, lenders, and businesses in Florida enforcement and insolvency-related matters.",
+      },
+      {
+        question: "Does the firm handle bankruptcy-related creditor issues?",
+        answer:
+          "Yes. The firm advises creditors and businesses in Chapter 7, Chapter 11, and Chapter 13 proceedings.",
+      },
+      ...intakeFaqs,
     ],
   },
   {
-    slug: "contract-disputes-attorney-miami",
-    kind: "service",
-    title: "Contract Disputes Attorney Miami",
-    metaTitle: "Contract Disputes Attorney Miami | Huang Law, P.A.",
+    slug: "florida-bankruptcy-attorney",
+    title: "Florida Bankruptcy Attorney",
+    metaTitle: "Florida Bankruptcy Attorney | Huang Law, P.A.",
     description:
-      "Miami contract dispute counsel for breach, interpretation, payment, performance, and negotiation matters.",
-    eyebrow: "Contract Disputes",
-    h1: "Contract dispute counsel for Miami clients who need clarity before conflict escalates.",
-    localIntro:
-      "Contract disputes often turn on language, timing, performance, and documentation. Huang Law, P.A. helps clients evaluate agreements and build a response that fits the commercial reality.",
-    helps: [
-      "Breach of contract issues",
-      "Payment and performance disputes",
-      "Contract interpretation questions",
-      "Demand letters and settlement discussions",
-      "Mediation of contract disagreements",
-    ],
-    why: [
-      "Practical review of written agreements and communications",
-      "Business-minded approach to risk and cost",
-      "Certified mediation perspective",
-      "Clear communication in English, Mandarin, and Spanish",
-    ],
-    process: [
-      "Review the agreement, amendments, messages, and performance history.",
-      "Identify obligations, defenses, deadlines, and leverage.",
-      "Recommend a path for negotiation, mediation, or litigation.",
-    ],
+      "Florida bankruptcy counsel for creditors, trustees, and businesses in Chapter 7, Chapter 11, and Chapter 13 proceedings.",
+    eyebrow: "Bankruptcy",
+    h1: "Bankruptcy counsel for creditors, trustees, and businesses navigating financial distress.",
+    intro:
+      "Huang Law advises clients in bankruptcy matters where litigation posture, claim priority, documentation, and negotiation strategy can materially affect recovery.",
+    helps: ["Chapter 7 creditor issues", "Chapter 11 business matters", "Chapter 13 proceedings", "Claims and objections", "Adversary proceeding strategy"],
+    why: ["Creditor-focused judgment", "Litigation and negotiation experience", "Practical assessment of recovery paths", "Clear communication with stakeholders"],
     faqs: [
-      { question: "What documents matter in a contract dispute?", answer: "The written contract, amendments, invoices, notices, emails, text messages, and payment records may all matter." },
-      { question: "Can contract disputes be resolved without trial?", answer: "Some contract disputes resolve through negotiation or mediation. The right approach depends on the facts and the parties." },
-      { question: "Can the firm review a demand letter?", answer: "Yes. Reviewing a demand letter early can help clarify risk, deadlines, and response strategy." },
-      { question: "Do oral agreements matter?", answer: "Sometimes. Whether an oral agreement is enforceable depends on the facts and applicable law." },
-      conservativeFaqs.consultation,
-    ],
-    relatedLinks: [
-      { label: "Business Litigation", href: "/business-litigation-attorney-miami" },
-      { label: "Real Estate Disputes", href: "/real-estate-dispute-attorney-miami" },
+      {
+        question: "Who does Huang Law represent in bankruptcy matters?",
+        answer:
+          "The firm counsels creditors, trustees, and businesses in bankruptcy-related matters and proceedings.",
+      },
+      {
+        question: "Can bankruptcy issues overlap with litigation?",
+        answer:
+          "Yes. Bankruptcy matters often involve claims disputes, adversary proceedings, enforcement issues, and settlement strategy.",
+      },
+      ...intakeFaqs,
     ],
   },
   {
-    slug: "real-estate-dispute-attorney-miami",
-    kind: "service",
-    title: "Real Estate Dispute Attorney Miami",
-    metaTitle: "Real Estate Dispute Attorney Miami | Huang Law, P.A.",
+    slug: "florida-banking-law-attorney",
+    title: "Florida Banking Law Attorney",
+    metaTitle: "Florida Banking Law Attorney | Huang Law, P.A.",
     description:
-      "Miami real estate dispute counsel for buyers, sellers, landlords, investors, leases, contracts, and property disagreements.",
-    eyebrow: "Real Estate Disputes",
-    h1: "Real estate dispute counsel for Miami buyers, sellers, landlords, and investors.",
-    localIntro:
-      "Real estate conflicts can affect money, timing, occupancy, and business plans. Huang Law, P.A. helps clients evaluate the legal and practical issues behind Florida property disputes.",
-    helps: [
-      "Buyer and seller disputes",
-      "Lease and landlord-tenant related conflicts",
-      "Investor and property agreement issues",
-      "Contract interpretation and performance disputes",
-      "Mediation of property disagreements",
-    ],
-    why: [
-      "Focused review of documents and transaction history",
-      "Practical attention to timing and cost",
-      "Mediation-informed approach to resolution",
-      "Multilingual legal communication for diverse clients",
-    ],
-    process: [
-      "Review contracts, notices, communications, and property documents.",
-      "Identify immediate risks, deadlines, and available options.",
-      "Prepare a plan for negotiation, mediation, or litigation if needed.",
-    ],
+      "Florida banking law attorney advising lenders and financial institutions in loan disputes, enforcement matters, and related litigation.",
+    eyebrow: "Banking Law",
+    h1: "Counsel for lenders and financial institutions in Florida banking disputes.",
+    intro:
+      "The firm advises banks, lenders, and financial institutions in matters involving loan disputes, enforcement actions, borrower conflicts, and related litigation.",
+    helps: ["Loan disputes", "Enforcement matters", "Borrower and guarantor disputes", "Litigation support for lenders", "Creditor strategy"],
+    why: ["Institutional client orientation", "Precise documentation review", "Litigation-ready analysis", "Discreet and responsive communication"],
     faqs: [
-      { question: "Can Huang Law help with a real estate contract dispute?", answer: "Yes. The firm can review the agreement, communications, performance issues, and potential next steps." },
-      { question: "Are real estate disputes good candidates for mediation?", answer: "Some are. Mediation can help parties address cost, timing, and practical outcomes without prolonged litigation." },
-      { question: "Should I wait before contacting counsel?", answer: "Waiting can create risk if deadlines, notices, or evidence are involved. Early review can help avoid preventable mistakes." },
-      { question: "Can the firm help investors?", answer: "The firm can assist investors with Florida legal concerns involving agreements, disputes, and property-related conflicts." },
-      conservativeFaqs.confidential,
-    ],
-    relatedLinks: [
-      { label: "Contract Disputes", href: "/contract-disputes-attorney-miami" },
-      { label: "Mediation", href: "/mediation-attorney-miami" },
+      {
+        question: "Does Huang Law advise banks and lenders?",
+        answer:
+          "Yes. The firm advises lenders and financial institutions in loan disputes, enforcement matters, and related litigation.",
+      },
+      {
+        question: "Can the firm coordinate with in-house counsel?",
+        answer:
+          "Yes. The firm can work directly with in-house legal departments, outside counsel, and referral attorneys.",
+      },
+      ...intakeFaqs,
     ],
   },
   {
-    slug: "mediation-attorney-miami",
-    kind: "service",
-    title: "Mediation Attorney Miami",
-    metaTitle: "Mediation Attorney Miami | Huang Law, P.A.",
+    slug: "florida-probate-litigation-lawyer",
+    title: "Florida Probate Litigation Lawyer",
+    metaTitle: "Florida Probate Litigation Lawyer | Huang Law, P.A.",
     description:
-      "Miami mediation services from a Florida Supreme Court Certified Mediator for business, contract, real estate, and civil disputes.",
+      "Florida probate litigation counsel for probate administration, fiduciary disputes, contested estates, and related litigation.",
+    eyebrow: "Probate Law",
+    h1: "Probate counsel for contested estates, fiduciary disputes, and administration issues.",
+    intro:
+      "Huang Law helps clients address probate matters where family dynamics, fiduciary duties, asset questions, and litigation risk require careful handling.",
+    helps: ["Probate administration", "Fiduciary disputes", "Contested estates", "Beneficiary disputes", "Related civil litigation"],
+    why: ["Careful factual development", "Dispute resolution perspective", "Court-aware strategy", "Measured communication in sensitive matters"],
+    faqs: [
+      {
+        question: "Does the firm handle contested probate matters?",
+        answer:
+          "Yes. Huang Law can assist with fiduciary disputes, contested estates, and probate-related litigation.",
+      },
+      {
+        question: "Can probate disputes be mediated?",
+        answer:
+          "Many probate disputes may be appropriate for mediation depending on the parties, issues, and procedural posture.",
+      },
+      ...intakeFaqs,
+    ],
+  },
+  {
+    slug: "florida-immigration-lawyer",
+    title: "Florida Immigration Lawyer",
+    metaTitle: "Florida Immigration Lawyer | Huang Law, P.A.",
+    description:
+      "Florida immigration lawyer for business and family-based immigration matters with English, Mandarin, and Spanish communication.",
+    eyebrow: "Immigration",
+    h1: "Immigration counsel for business and family matters requiring practical guidance.",
+    intro:
+      "The firm provides business and family-based immigration services with clear communication, multilingual access, and attention to the client’s broader legal context.",
+    helps: ["Business immigration matters", "Family-based immigration", "Multilingual client communication", "Document review and process guidance", "Cross-border planning concerns"],
+    why: ["English, Mandarin, and Spanish fluency", "Practical counsel for sensitive matters", "Direct attorney involvement", "Strategic coordination when matters cross practice areas"],
+    faqs: [
+      {
+        question: "What immigration services does Huang Law provide?",
+        answer:
+          "The firm provides business and family-based immigration services and evaluates each inquiry based on the facts and procedural posture.",
+      },
+      {
+        question: "Can clients communicate in Mandarin or Spanish?",
+        answer:
+          "Yes. Huang Law offers communication in English, Mandarin, and Spanish.",
+      },
+      ...intakeFaqs,
+    ],
+  },
+  {
+    slug: "florida-certified-mediator",
+    title: "Florida Certified Mediator",
+    metaTitle: "Florida Certified Mediator | Huang Law, P.A.",
+    description:
+      "Florida Supreme Court Certified Mediator for business, civil, probate, creditor, and financial disputes.",
     eyebrow: "Mediation",
-    h1: "Certified mediation for Miami-area parties seeking a private path forward.",
-    localIntro:
-      "Mediation gives parties a confidential setting to address risk, cost, timing, and possible resolution. Haidan Huang is a Florida Supreme Court Certified Mediator.",
-    helps: [
-      "Business and commercial disputes",
-      "Contract and real estate disagreements",
-      "Civil litigation matters",
-      "Pre-suit dispute resolution",
-      "Multilingual mediation-related communication",
-    ],
-    why: [
-      "Florida Supreme Court Certified Mediator",
-      "Attorney perspective on litigation risk",
-      "Calm, structured facilitation",
-      "English, Mandarin, and Spanish fluency",
-    ],
-    process: [
-      "Identify the parties, dispute type, and scheduling needs.",
-      "Confirm mediation format, preparation materials, and participants.",
-      "Facilitate a confidential process focused on practical resolution.",
-    ],
+    h1: "Certified mediation for parties seeking a disciplined path to resolution.",
+    intro:
+      "As a Florida Supreme Court Certified Mediator, Michael Huang helps parties evaluate risk, cost, evidence, timing, and settlement options in a confidential setting.",
+    helps: ["Business and commercial disputes", "Creditor and financial disputes", "Civil litigation matters", "Probate and fiduciary disputes", "Pre-suit dispute resolution"],
+    why: ["Florida Supreme Court Certified Mediator", "Litigation-aware facilitation", "Calm, structured process", "Multilingual communication"],
     faqs: [
-      { question: "Is mediation confidential?", answer: "Mediation is generally designed to be confidential, though specific rules and agreements may affect how confidentiality applies." },
-      { question: "Does the mediator represent either side?", answer: "No. A mediator is neutral and does not represent either party in the mediation." },
-      { question: "What types of matters can be mediated?", answer: "Business, contract, real estate, and many civil disputes may be appropriate for mediation." },
-      { question: "Can mediation happen before a lawsuit?", answer: "Yes. Parties may seek mediation before litigation when they want to explore resolution early." },
-      conservativeFaqs.consultation,
-    ],
-    relatedLinks: [
-      { label: "Business Litigation", href: "/business-litigation-attorney-miami" },
-      { label: "Civil Litigation", href: "/civil-litigation-attorney-miami" },
+      {
+        question: "Is the mediator neutral?",
+        answer:
+          "Yes. A mediator is neutral and does not represent either party in the mediation.",
+      },
+      {
+        question: "Can mediation occur before litigation?",
+        answer:
+          "Yes. Parties may use mediation before a lawsuit when they want to explore resolution early.",
+      },
+      ...intakeFaqs,
     ],
   },
   {
-    slug: "mandarin-speaking-attorney-miami",
-    kind: "service",
-    title: "Mandarin Speaking Attorney Miami",
-    metaTitle: "Mandarin Speaking Attorney Miami | Huang Law, P.A.",
+    slug: "florida-local-counsel",
+    title: "Florida Local Counsel",
+    metaTitle: "Florida Local Counsel | Huang Law, P.A.",
     description:
-      "Mandarin-speaking Florida attorney for Miami-area clients with business, civil, contract, real estate, and mediation needs.",
-    eyebrow: "Mandarin-Speaking Counsel",
-    h1: "Mandarin-speaking legal counsel for Miami clients with Florida legal concerns.",
-    localIntro:
-      "Legal issues are harder when language creates uncertainty. Huang Law, P.A. provides Mandarin-language communication for clients who need Florida legal guidance with clarity.",
-    helps: [
-      "Business and contract disputes",
-      "Real estate and property disagreements",
-      "Civil claims and negotiation pressure",
-      "Mediation-related communication",
-      "International clients with Florida legal concerns",
-    ],
-    why: [
-      "Direct attorney access in Mandarin and English",
-      "Florida litigation and mediation perspective",
-      "Clear explanation of process, documents, and next steps",
-      "Culturally aware communication for sensitive matters",
-    ],
-    process: [
-      "Understand the matter, language preference, parties, and urgency.",
-      "Review documents and explain Florida legal options clearly.",
-      "Prepare next steps for negotiation, mediation, or litigation strategy.",
-    ],
+      "Florida local counsel for law firms, referral attorneys, and national counsel handling Florida litigation and disputes.",
+    eyebrow: "Florida Local Counsel",
+    h1: "Florida local counsel for law firms handling matters in state and federal courts.",
+    intro:
+      "Huang Law serves as a strategic Florida resource for law firms and referral attorneys who need responsive local counsel, procedural judgment, and practical litigation support.",
+    helps: ["Florida state and federal litigation support", "Local procedure and filing coordination", "Hearing and mediation support", "Referral counsel communication", "Strategic issue spotting"],
+    why: ["Attorney-to-attorney responsiveness", "Federal and state court admissions", "Discreet referral relationship handling", "Institutional-quality communication"],
     faqs: [
-      { question: "Can I communicate with the firm in Mandarin?", answer: "Yes. Haidan Huang is fluent in Mandarin and can communicate with Mandarin-speaking clients." },
-      { question: "Can the firm help international clients with Florida matters?", answer: "The firm can assist international clients with Florida legal concerns within the firm's practice areas." },
-      { question: "Can documents be reviewed if they involve multiple languages?", answer: "The firm can discuss document review needs during intake and identify what materials are relevant." },
-      { question: "Does the firm handle every type of legal matter?", answer: "No. The firm focuses on selected Florida legal matters and will evaluate whether the inquiry fits its practice." },
-      conservativeFaqs.consultation,
-    ],
-    relatedLinks: [
-      { label: "Multilingual Attorney", href: "/multilingual-attorney-miami" },
-      { label: "Business Litigation", href: "/business-litigation-attorney-miami" },
-    ],
-  },
-  {
-    slug: "spanish-speaking-attorney-miami",
-    kind: "service",
-    title: "Spanish Speaking Attorney Miami",
-    metaTitle: "Spanish Speaking Attorney Miami | Huang Law, P.A.",
-    description:
-      "Spanish-speaking Florida attorney for Miami-area clients with civil, business, contract, real estate, and mediation matters.",
-    eyebrow: "Spanish-Speaking Counsel",
-    h1: "Spanish-speaking legal counsel for Miami-area clients who need clear Florida guidance.",
-    localIntro:
-      "Clients should not have to guess what a legal document, dispute, or negotiation means. Huang Law, P.A. provides Spanish-language communication for Florida legal matters within the firm's practice areas.",
-    helps: [
-      "Civil claims and dispute strategy",
-      "Business and contract disagreements",
-      "Real estate disputes",
-      "Mediation preparation and participation",
-      "Communication with families, owners, and professionals",
-    ],
-    why: [
-      "Spanish-language communication",
-      "Direct attorney involvement",
-      "Practical dispute and mediation perspective",
-      "Conservative guidance without overstating outcomes",
-    ],
-    process: [
-      "Review the issue, documents, parties, and preferred language.",
-      "Explain the legal posture and available options.",
-      "Build a communication and resolution plan.",
-    ],
-    faqs: [
-      { question: "Can I speak with the firm in Spanish?", answer: "Yes. Huang Law, P.A. offers Spanish-language communication for clients who prefer it." },
-      { question: "Can family members help explain the issue?", answer: "The firm can discuss communication preferences during intake while protecting confidentiality and professional obligations." },
-      { question: "Does the firm provide legal advice before engagement?", answer: "The firm can review inquiries, but legal advice is provided only when appropriate and after engagement terms are confirmed." },
-      { question: "What matters does the firm focus on?", answer: "The firm focuses on business disputes, civil litigation, mediation, contract issues, real estate disputes, and multilingual legal matters." },
-      conservativeFaqs.confidential,
-    ],
-    relatedLinks: [
-      { label: "Multilingual Attorney", href: "/multilingual-attorney-miami" },
-      { label: "Civil Litigation", href: "/civil-litigation-attorney-miami" },
-    ],
-  },
-  {
-    slug: "multilingual-attorney-miami",
-    kind: "service",
-    title: "Multilingual Attorney Miami",
-    metaTitle: "Multilingual Attorney Miami | Huang Law, P.A.",
-    description:
-      "Multilingual Florida attorney serving Miami-area clients in English, Mandarin, and Spanish for selected civil and business matters.",
-    eyebrow: "Multilingual Legal Counsel",
-    h1: "Multilingual Florida legal counsel for Miami clients who need clarity.",
-    localIntro:
-      "In a diverse market like Miami, legal communication must be precise. Huang Law, P.A. helps clients navigate selected Florida legal matters in English, Mandarin, and Spanish.",
-    helps: [
-      "Business owners with cross-language disputes",
-      "International clients with Florida legal concerns",
-      "Families and professionals coordinating legal communication",
-      "Real estate and contract disputes",
-      "Mediation and civil litigation planning",
-    ],
-    why: [
-      "English, Mandarin, and Spanish fluency",
-      "Florida attorney and certified mediator credentials",
-      "Direct attorney access",
-      "Clear explanation of process, risk, and next steps",
-    ],
-    process: [
-      "Identify the language preference, matter type, and parties.",
-      "Review key documents and explain Florida legal options.",
-      "Coordinate a practical strategy for communication and resolution.",
-    ],
-    faqs: [
-      { question: "What languages does the firm offer?", answer: "The firm offers communication in English, Mandarin, and Spanish." },
-      { question: "Can multilingual counsel help avoid misunderstandings?", answer: "Clear language access can help clients better understand documents, process, and strategy." },
-      { question: "Does multilingual counsel mean the firm handles every legal issue?", answer: "No. The firm focuses on the practice areas described on this website unless another matter is specifically confirmed during intake." },
-      { question: "Can the firm help international clients?", answer: "The firm can review Florida legal concerns for international clients within its practice areas." },
-      conservativeFaqs.consultation,
-    ],
-    relatedLinks: [
-      { label: "Mandarin-Speaking Attorney", href: "/mandarin-speaking-attorney-miami" },
-      { label: "Spanish-Speaking Attorney", href: "/spanish-speaking-attorney-miami" },
-    ],
-  },
-  {
-    slug: "miami-attorney",
-    kind: "city",
-    title: "Miami Attorney",
-    metaTitle: "Miami Attorney | Litigation, Mediation & Multilingual Counsel",
-    description:
-      "Florida attorney serving Miami clients in business disputes, civil litigation, mediation, contracts, real estate disputes, and multilingual matters.",
-    eyebrow: "Miami Legal Counsel",
-    h1: "Miami legal counsel for disputes, mediation, contracts, and multilingual matters.",
-    localIntro:
-      "Miami clients often need counsel who can move between business reality, litigation risk, mediation, and multilingual communication. Huang Law, P.A. provides direct attorney attention for selected Florida matters.",
-    helps: [
-      "Business and contract disputes in the Miami area",
-      "Civil claims and negotiation pressure",
-      "Real estate and property disagreements",
-      "Private mediation for civil and commercial matters",
-      "English, Mandarin, and Spanish communication",
-    ],
-    why: [
-      "Boutique firm attention",
-      "Certified mediation credential",
-      "Florida state and federal court admissions",
-      "Multilingual communication for Miami's diverse client base",
-    ],
-    process: [
-      "Gather the facts, parties, documents, county, and urgency.",
-      "Evaluate whether negotiation, mediation, or litigation strategy fits.",
-      "Create a practical next-step plan.",
-    ],
-    faqs: [
-      { question: "Does Huang Law serve Miami clients?", answer: "Yes. Huang Law, P.A. serves Florida clients, including clients with Miami-area legal concerns." },
-      { question: "What Miami matters does the firm focus on?", answer: "The firm focuses on business disputes, civil litigation, mediation, contracts, real estate disputes, and multilingual legal counsel." },
-      { question: "Can I request a consultation online?", answer: "Yes. The consultation form collects basic intake details and includes the required no attorney-client relationship acknowledgment." },
-      { question: "Can I communicate in Mandarin or Spanish?", answer: "Yes. The firm offers communication in English, Mandarin, and Spanish." },
-      conservativeFaqs.confidential,
-    ],
-    relatedLinks: [
-      { label: "Business Litigation", href: "/business-litigation-attorney-miami" },
-      { label: "Multilingual Attorney", href: "/multilingual-attorney-miami" },
-    ],
-  },
-  {
-    slug: "coral-gables-attorney",
-    kind: "city",
-    title: "Coral Gables Attorney",
-    metaTitle: "Coral Gables Attorney | Huang Law, P.A.",
-    description:
-      "Florida legal counsel for Coral Gables business, civil, real estate, contract, mediation, and multilingual legal matters.",
-    eyebrow: "Coral Gables Legal Counsel",
-    h1: "Coral Gables legal counsel for business, property, and civil disputes.",
-    localIntro:
-      "Coral Gables clients often need legal guidance that respects business relationships, property interests, and reputational concerns. Huang Law, P.A. provides direct attorney strategy for selected Florida disputes.",
-    helps: [
-      "Contract and business disagreements",
-      "Real estate and property-related disputes",
-      "Civil claims and pre-suit negotiations",
-      "Private mediation planning",
-      "Multilingual communication for owners and professionals",
-    ],
-    why: [
-      "Discreet boutique-firm approach",
-      "Practical focus on risk, documents, and leverage",
-      "Certified mediation perspective",
-      "English, Mandarin, and Spanish communication",
-    ],
-    process: [
-      "Clarify the legal issue, documents, and parties.",
-      "Identify deadlines, negotiation posture, and practical constraints.",
-      "Prepare a measured plan for resolution or litigation readiness.",
-    ],
-    faqs: [
-      { question: "Can Huang Law assist Coral Gables business owners?", answer: "The firm can review business and contract disputes involving Florida legal concerns." },
-      { question: "Can real estate disputes be reviewed?", answer: "Yes. The firm can evaluate selected real estate disputes involving contracts, property disagreements, and related communications." },
-      { question: "Is mediation available for Coral Gables disputes?", answer: "Mediation may be available where the parties agree or where a court process requires it." },
-      { question: "Does the firm offer multilingual support?", answer: "Yes. English, Mandarin, and Spanish communication are available." },
-      conservativeFaqs.consultation,
-    ],
-    relatedLinks: [
-      { label: "Real Estate Disputes", href: "/real-estate-dispute-attorney-miami" },
-      { label: "Contract Disputes", href: "/contract-disputes-attorney-miami" },
-    ],
-  },
-  {
-    slug: "brickell-attorney",
-    kind: "city",
-    title: "Brickell Attorney",
-    metaTitle: "Brickell Attorney | Business, Contract & Mediation Counsel",
-    description:
-      "Florida attorney for Brickell business owners, professionals, investors, and international clients with selected civil and commercial legal matters.",
-    eyebrow: "Brickell Legal Counsel",
-    h1: "Brickell legal counsel for business disputes, contracts, and multilingual matters.",
-    localIntro:
-      "Brickell's business and international community often needs legal advice that is fast, precise, and commercially aware. Huang Law, P.A. helps clients evaluate disputes and legal pressure with direct attorney involvement.",
-    helps: [
-      "Business owner and professional disputes",
-      "Contract review in conflict situations",
-      "Investor and real estate-related disagreements",
-      "Civil claims and negotiation strategy",
-      "Mandarin and Spanish communication for international clients",
-    ],
-    why: [
-      "Boutique attorney access",
-      "Business-minded dispute strategy",
-      "Certified mediation perspective",
-      "Multilingual communication for complex client needs",
-    ],
-    process: [
-      "Identify the business issue, documents, and immediate pressure points.",
-      "Review legal options and possible resolution channels.",
-      "Prepare a practical strategy for negotiation, mediation, or litigation.",
-    ],
-    faqs: [
-      { question: "Can Huang Law help Brickell business clients?", answer: "The firm can review selected Florida business, contract, civil, and real estate disputes." },
-      { question: "Can international clients contact the firm?", answer: "Yes. The firm can review Florida legal concerns for international clients within its practice areas." },
-      { question: "Is multilingual communication available?", answer: "Yes. The firm communicates in English, Mandarin, and Spanish." },
-      { question: "What should I include in the intake form?", answer: "Include the parties, matter type, county, urgency, and a brief non-confidential description." },
-      conservativeFaqs.confidential,
-    ],
-    relatedLinks: [
-      { label: "Business Litigation", href: "/business-litigation-attorney-miami" },
-      { label: "Mandarin-Speaking Attorney", href: "/mandarin-speaking-attorney-miami" },
-    ],
-  },
-  {
-    slug: "aventura-attorney",
-    kind: "city",
-    title: "Aventura Attorney",
-    metaTitle: "Aventura Attorney | Huang Law, P.A.",
-    description:
-      "Florida counsel for Aventura clients with business, civil, real estate, mediation, and multilingual legal concerns.",
-    eyebrow: "Aventura Legal Counsel",
-    h1: "Aventura legal counsel for civil, business, real estate, and multilingual matters.",
-    localIntro:
-      "Aventura clients may face disputes involving property, business relationships, contracts, or cross-border concerns. Huang Law, P.A. provides focused Florida legal guidance for selected matters.",
-    helps: [
-      "Real estate and contract disputes",
-      "Business and partnership disagreements",
-      "Civil claims and negotiation pressure",
-      "Mediation for private dispute resolution",
-      "English, Mandarin, and Spanish communication",
-    ],
-    why: [
-      "Focused boutique practice",
-      "Direct communication with counsel",
-      "Mediation-informed strategy",
-      "Language access for diverse clients",
-    ],
-    process: [
-      "Review the matter type, parties, location, documents, and urgency.",
-      "Discuss Florida legal options and practical risks.",
-      "Plan the next communication, negotiation, mediation, or litigation step.",
-    ],
-    faqs: [
-      { question: "Does Huang Law serve Aventura clients?", answer: "Yes. Huang Law, P.A. can review Florida legal matters for Aventura-area clients." },
-      { question: "Can the firm help with property disputes?", answer: "The firm can review selected property and real estate disputes involving Florida legal concerns." },
-      { question: "Can mediation help avoid prolonged conflict?", answer: "Mediation can sometimes help parties address disputes more efficiently, depending on the facts and willingness to participate." },
-      { question: "Can I request Mandarin or Spanish communication?", answer: "Yes. English, Mandarin, and Spanish communication are available." },
-      conservativeFaqs.consultation,
-    ],
-    relatedLinks: [
-      { label: "Real Estate Disputes", href: "/real-estate-dispute-attorney-miami" },
-      { label: "Mediation", href: "/mediation-attorney-miami" },
-    ],
-  },
-  {
-    slug: "doral-attorney",
-    kind: "city",
-    title: "Doral Attorney",
-    metaTitle: "Doral Attorney | Multilingual Business & Civil Counsel",
-    description:
-      "Florida attorney for Doral business owners, families, professionals, and international clients with selected disputes and multilingual legal concerns.",
-    eyebrow: "Doral Legal Counsel",
-    h1: "Doral legal counsel for business, civil, contract, and multilingual matters.",
-    localIntro:
-      "Doral's business and multilingual communities often need Florida legal guidance that is practical and clear. Huang Law, P.A. helps clients evaluate disputes, contracts, mediation options, and communication strategy.",
-    helps: [
-      "Business and contract disputes",
-      "Civil claims and negotiation pressure",
-      "Real estate and property disagreements",
-      "Mediation preparation",
-      "Spanish, Mandarin, and English legal communication",
-    ],
-    why: [
-      "Multilingual counsel for diverse client needs",
-      "Direct attorney access",
-      "Florida litigation and mediation perspective",
-      "Practical attention to documents, parties, and deadlines",
-    ],
-    process: [
-      "Gather the facts, county, parties, and preferred language.",
-      "Review documents and identify legal and practical issues.",
-      "Recommend a resolution, mediation, or litigation-readiness path.",
-    ],
-    faqs: [
-      { question: "Can Huang Law help Doral business owners?", answer: "The firm can review selected business and contract disputes involving Florida law." },
-      { question: "Is Spanish communication available?", answer: "Yes. The firm offers communication in Spanish, Mandarin, and English." },
-      { question: "Can the firm help with mediation?", answer: "Yes. Haidan Huang is a Florida Supreme Court Certified Mediator." },
-      { question: "Does contacting the firm mean I am represented?", answer: "No. Representation begins only after the firm confirms the engagement in writing." },
-      conservativeFaqs.confidential,
-    ],
-    relatedLinks: [
-      { label: "Spanish-Speaking Attorney", href: "/spanish-speaking-attorney-miami" },
-      { label: "Contract Disputes", href: "/contract-disputes-attorney-miami" },
+      {
+        question: "Does Huang Law accept referrals from other attorneys?",
+        answer:
+          "Yes. The firm works with referral attorneys and law firms seeking Florida counsel for litigation, mediation, and selected practice-area matters.",
+      },
+      {
+        question: "Can the firm coordinate with national counsel?",
+        answer:
+          "Yes. Huang Law can coordinate with national counsel, in-house legal teams, and referral counsel on Florida matters.",
+      },
+      ...intakeFaqs,
     ],
   },
 ];
@@ -684,25 +367,75 @@ export function firmLegalServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LegalService",
+    "@id": `${site.url}/#legalservice`,
     name: site.name,
     url: site.url,
     telephone: site.phone,
+    email: site.email,
+    image: `${site.url}/images/mr-huang.png`,
+    priceRange: "$$$",
     address: firmAddressSchema(),
     areaServed: ["Florida", "Miami-Dade County", "Broward County", "Palm Beach County"],
+    knowsLanguage: site.languages,
     founder: {
-      "@type": "Person",
+      "@type": "Attorney",
+      "@id": `${site.url}/#attorney`,
       name: site.schemaAttorneyName,
+      jobTitle: "Florida Attorney and Florida Supreme Court Certified Mediator",
       alumniOf: ["University of Miami School of Law", "University of Connecticut"],
       knowsLanguage: site.languages,
-      jobTitle: "Florida Attorney and Florida Supreme Court Certified Mediator",
     },
-    knowsAbout: [
-      "Business disputes",
-      "Civil litigation",
-      "Certified mediation",
-      "Contract disputes",
-      "Real estate disputes",
-      "Multilingual legal counsel",
+    knowsAbout: practiceAreas.map((area) => area.title),
+  };
+}
+
+export function attorneySchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    "@id": `${site.url}/#attorney`,
+    name: site.schemaAttorneyName,
+    honorificSuffix: "Esq.",
+    jobTitle: "Florida Attorney and Florida Supreme Court Certified Mediator",
+    worksFor: {
+      "@id": `${site.url}/#legalservice`,
+    },
+    alumniOf: ["University of Miami School of Law", "University of Connecticut"],
+    knowsLanguage: site.languages,
+    image: `${site.url}/images/mr-huang.png`,
+    url: `${site.url}/about`,
+  };
+}
+
+export function faqSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Does Huang Law serve as Florida local counsel?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Huang Law works with law firms, referral attorneys, national counsel, and legal departments that need Florida counsel for litigation, mediation, and selected practice-area matters.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What practice areas does Huang Law handle?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The firm handles general civil litigation, creditor's rights, bankruptcy, banking law, probate law, immigration, and mediation.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What languages does Michael Huang speak?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Michael Huang is fluent in English, Mandarin, and Spanish.",
+        },
+      },
     ],
   };
 }

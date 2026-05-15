@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
@@ -15,7 +16,7 @@ export default function Disclaimer() {
         <p className="eyebrow">Disclaimer</p>
         <h1>Disclaimer</h1>
         <p>
-          This website is attorney advertising for Huang Law, P.A. and Haidan "Daniel" Huang, Florida Bar No. 1023249.
+          This website is attorney advertising for Huang Law, P.A. and {site.attorney}.
         </p>
         <h2>No Attorney-Client Relationship</h2>
         <p>
@@ -23,7 +24,7 @@ export default function Disclaimer() {
         </p>
         <h2>Jurisdiction Notice</h2>
         <p>
-          Haidan "Daniel" Huang is licensed in Florida. Huang Law, P.A. provides legal services for Florida matters and other matters where the firm is authorized to act.
+          {site.attorney} is licensed in Florida. Huang Law, P.A. provides legal services for Florida matters and other matters where the firm is authorized to act.
         </p>
         <h2>Privacy and Contact Form Data</h2>
         <p>

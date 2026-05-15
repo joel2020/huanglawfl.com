@@ -138,7 +138,7 @@ export function ConsultationForm() {
         <textarea
           name="description"
           rows={5}
-          placeholder="Share a brief non-confidential summary of the matter, current deadline, and what outcome you need."
+          placeholder="Share a brief non-confidential summary, the parties involved, the forum or county, any deadline, and the result you need."
           required
         />
       </label>
@@ -150,7 +150,7 @@ export function ConsultationForm() {
         Submitting this form does not create an attorney-client relationship. Please do not include confidential information until an attorney-client relationship has been formally established.
       </p>
       <button className="button button-gold" type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Preparing Request" : "Request a Confidential Consultation"}
+        {isSubmitting ? "Preparing Request" : "Schedule a Consultation"}
       </button>
       {status ? <p className="form-status" role="status">{status}</p> : null}
     </form>

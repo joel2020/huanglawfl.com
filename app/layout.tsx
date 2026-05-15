@@ -17,23 +17,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://huanglawfl.com"),
+  metadataBase: new URL("https://www.huanglawfl.com"),
   title: {
-    default: "Huang Law, P.A. | Strategic Florida Litigation, Mediation & Multilingual Counsel",
+    default: "Huang Law, P.A. | Florida Litigation, Creditor Rights, Banking, Probate & Immigration Counsel",
     template: "%s | Huang Law, P.A.",
   },
   description:
-    "Boutique Florida law firm for business disputes, civil litigation, mediation, contracts, real estate disputes, and multilingual legal matters in English, Mandarin, and Spanish.",
+    "Strategic Florida counsel for complex litigation, creditor rights, bankruptcy, banking law, probate law, immigration, mediation, and local counsel engagements.",
   keywords: [
-    "Florida attorney",
-    "Florida mediator",
-    "certified mediator Florida",
-    "Huang Law",
-    "multilingual attorney Florida",
-    "Mandarin speaking attorney Florida",
-    "Spanish speaking attorney Florida",
-    "Miami attorney",
-    "Florida litigation attorney",
+    "Florida business litigation attorney",
+    "Florida creditor rights lawyer",
+    "Florida bankruptcy attorney",
+    "Florida banking law attorney",
+    "Florida probate litigation lawyer",
+    "Florida immigration lawyer",
+    "Florida certified mediator",
+    "Florida local counsel",
   ],
   authors: [{ name: "Huang Law, P.A." }],
   creator: "Huang Law, P.A.",
@@ -42,17 +41,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Huang Law, P.A. | Strategic Florida Litigation, Mediation & Multilingual Counsel",
+    title: "Huang Law, P.A. | Strategic Florida Counsel",
     description:
-      "Boutique Florida law firm for high-stakes business disputes, civil litigation, mediation, contracts, real estate disputes, and multilingual legal matters.",
-    url: "https://huanglawfl.com",
+      "Florida litigation, creditor rights, bankruptcy, banking law, probate, immigration, mediation, and local counsel for sophisticated clients.",
+    url: "https://www.huanglawfl.com",
     siteName: "Huang Law, P.A.",
     images: [
       {
         url: "/images/huang-law-og.svg",
         width: 1200,
         height: 630,
-        alt: "Huang Law, P.A. premium navy and bronze wordmark",
+        alt: "Huang Law, P.A. navy and gold wordmark",
       },
     ],
     locale: "en_US",
@@ -60,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Huang Law, P.A. | Strategic Florida Litigation, Mediation & Multilingual Counsel",
+    title: "Huang Law, P.A. | Strategic Florida Counsel",
     description:
-      "Florida legal counsel for disputes, mediation, contracts, real estate, and multilingual matters in English, Mandarin, and Spanish.",
+      "Strategic Florida counsel for litigation, creditor rights, bankruptcy, banking, probate, immigration, mediation, and local counsel.",
     images: ["/images/huang-law-og.svg"],
   },
   robots: {

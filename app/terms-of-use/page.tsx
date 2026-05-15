@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -31,7 +32,7 @@ export default function TermsOfUse() {
         </p>
         <h2>Jurisdiction</h2>
         <p>
-          Haidan "Daniel" Huang is licensed in Florida. Huang Law, P.A. provides legal services for Florida matters and other matters where the firm is authorized to act.
+          {site.attorney} is licensed in Florida. Huang Law, P.A. provides legal services for Florida matters and other matters where the firm is authorized to act.
         </p>
       </div>
     </main>
