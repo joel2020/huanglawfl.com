@@ -50,29 +50,17 @@ export default function Home() {
       <Header />
       <main id="top">
         <section className="hero text-hero" aria-labelledby="hero-title">
-          <div className="container hero-layout">
-            <div className="hero-copy">
-              <p className="eyebrow">Florida Litigation, Creditor, Banking, Probate, Immigration, and Mediation Counsel</p>
-              <h1 id="hero-title">Strategic Counsel for Complex Litigation, Financial Disputes, and Cross-Border Matters</h1>
-              <p className="hero-lede">
-                Huang Law represents businesses, financial institutions, creditors, and individuals in sophisticated matters involving civil litigation, bankruptcy, banking law, probate, immigration, and dispute resolution.
-              </p>
-              <div className="hero-actions">
-                <Link className="button button-gold" href="/contact">Schedule a Consultation</Link>
-                <Link className="button button-ghost" href="/practice-areas">View Practice Areas</Link>
-              </div>
-              <QuickActions />
+          <div className="container hero-copy">
+            <p className="eyebrow">Florida Litigation, Creditor, Banking, Probate, Immigration, and Mediation Counsel</p>
+            <h1 id="hero-title">Strategic Counsel for Complex Litigation, Financial Disputes, and Cross-Border Matters</h1>
+            <p className="hero-lede">
+              Huang Law represents businesses, financial institutions, creditors, and individuals in sophisticated matters involving civil litigation, bankruptcy, banking law, probate, immigration, and dispute resolution.
+            </p>
+            <div className="hero-actions">
+              <Link className="button button-gold" href="/contact">Schedule a Consultation</Link>
+              <Link className="button button-ghost" href="/practice-areas">View Practice Areas</Link>
             </div>
-            <div className="hero-photo" aria-label={`Portrait of ${site.attorney}`}>
-              <Image
-                src="/images/mr-huang.png"
-                alt={`${site.attorney}, Florida attorney and certified mediator`}
-                width={720}
-                height={896}
-                sizes="(max-width: 840px) 78vw, 360px"
-                priority
-              />
-            </div>
+            <QuickActions />
           </div>
         </section>
 
