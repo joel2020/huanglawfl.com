@@ -10,7 +10,7 @@ export function Footer() {
             <span className="brand-mark" aria-hidden="true">HL</span>
             <span className="brand-text"><span>Huang Law</span><em>PLLC</em></span>
           </Link>
-          <p>Florida counsel for creditor rights, banking disputes, enforcement litigation, business disputes, mediation, and local counsel engagements.</p>
+          <p>Florida counsel for creditor rights, banking disputes, enforcement litigation, business disputes, mediation, and local counsel.</p>
         </div>
         <nav aria-label="Footer navigation">
           <h2>Navigation</h2>

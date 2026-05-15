@@ -22,17 +22,17 @@ const whyItems = [
   {
     title: "Commercial discipline before escalation",
     description:
-      "Each matter is evaluated through evidence, leverage, forum, cost, collectability, and business consequences before the next move is made.",
+      "Evidence, leverage, forum, cost, and collectability are weighed before the next move is made.",
   },
   {
     title: "Useful to referral and national counsel",
     description:
-      "The firm supports lawyers and legal departments that need Florida procedure, hearing support, and reliable local judgment.",
+      "The firm supports lawyers and legal departments that need Florida procedure and reliable local judgment.",
   },
   {
     title: "Built around financial disputes",
     description:
-      "Banking, creditor, bankruptcy-related, and enforcement matters are handled with attention to documents, recovery posture, and timing.",
+      "Banking, creditor, bankruptcy-related, and enforcement matters are handled with focus on documents, recovery posture, and timing.",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function Home() {
               <h2 id="audience-heading">For matters where recovery, leverage, and Florida procedure matter.</h2>
             </div>
             <p>
-              The firm is built for creditor, lender, banking, enforcement, business dispute, and local counsel needs. Other practice areas remain available when they fit the matter.
+              The firm is built for creditor, lender, banking, enforcement, business dispute, and local counsel needs. Other capabilities remain available when they fit the matter.
             </p>
           </div>
           <div className="container audience-grid">
@@ -172,7 +172,7 @@ export default function Home() {
           <div className="container proof-grid">
             <div>
               <p className="eyebrow">Why Huang Law</p>
-              <h2 id="why-heading">Senior attention, measured strategy, and Florida procedural judgment.</h2>
+            <h2 id="why-heading">Measured strategy, senior attention, and Florida procedural judgment.</h2>
             </div>
             <div className="proof-panel">
               {whyItems.map((item) => (
@@ -200,7 +200,7 @@ export default function Home() {
             <p className="eyebrow">Attorney and Mediator</p>
             <h2 id="attorney-heading">Dan Huang brings Florida litigation judgment to financial and business disputes.</h2>
             <p>
-              Mr. Huang advises creditors, lenders, businesses, and referral counsel in matters that require measured advocacy, procedural command, and direct attorney attention.
+              Mr. Huang advises creditors, lenders, businesses, and referral counsel in matters requiring measured advocacy, procedural command, and direct attorney attention.
             </p>
             <div className="authority-list" aria-label="Attorney credentials">
               {authorityItems.map((item) => (
@@ -232,7 +232,7 @@ export default function Home() {
               <p className="eyebrow">Contact Huang Law</p>
               <h2 id="contact-heading">Send a focused, non-confidential intake summary.</h2>
               <p className="contact-lede">
-                The firm reviews new inquiries for subject matter fit, conflicts, timing, jurisdiction, and next steps. A brief summary is enough to begin that review.
+                The firm reviews inquiries for fit, conflicts, timing, jurisdiction, and next steps. A brief summary is enough to begin.
               </p>
               <div className="contact-card">
                 <p>{legalDisclaimer}</p>

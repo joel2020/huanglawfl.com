@@ -83,56 +83,64 @@ export function ConsultationForm() {
 
   return (
     <form className="intake-form" id="consultation-form" onSubmit={handleSubmit}>
-      <div className="form-grid">
-        <label>
-          <span>Full name</span>
-          <input name="fullName" type="text" autoComplete="name" required />
-        </label>
-        <label>
-          <span>Email</span>
-          <input name="email" type="email" autoComplete="email" required />
-        </label>
-        <label>
-          <span>Phone</span>
-          <input name="phone" type="tel" autoComplete="tel" required />
-        </label>
-        <label>
-          <span>Preferred language</span>
-          <select name="preferredLanguage" defaultValue="English" required>
-            {languageOptions.map((language) => (
-              <option key={language}>{language}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>Matter type</span>
-          <select name="matterType" value={matterType} onChange={(event) => setMatterType(event.target.value)} required>
-            {matterTypes.map((matter) => (
-              <option key={matter}>{matter}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>County</span>
-          <select name="county" defaultValue="Miami-Dade" required>
-            {countyOptions.map((county) => (
-              <option key={county}>{county}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>Adverse party / parties</span>
-          <input name="opposingParties" type="text" placeholder="Names needed for conflict review" required />
-        </label>
-        <label>
-          <span>Urgency</span>
-          <select name="urgency" defaultValue="This week" required>
-            {urgencyOptions.map((urgency) => (
-              <option key={urgency}>{urgency}</option>
-            ))}
-          </select>
-        </label>
-      </div>
+      <fieldset className="form-section">
+        <legend>Contact</legend>
+        <div className="form-grid">
+          <label>
+            <span>Full name</span>
+            <input name="fullName" type="text" autoComplete="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" autoComplete="email" required />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input name="phone" type="tel" autoComplete="tel" required />
+          </label>
+          <label>
+            <span>Preferred language</span>
+            <select name="preferredLanguage" defaultValue="English" required>
+              {languageOptions.map((language) => (
+                <option key={language}>{language}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset className="form-section">
+        <legend>Matter</legend>
+        <div className="form-grid">
+          <label>
+            <span>Matter type</span>
+            <select name="matterType" value={matterType} onChange={(event) => setMatterType(event.target.value)} required>
+              {matterTypes.map((matter) => (
+                <option key={matter}>{matter}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span>County</span>
+            <select name="county" defaultValue="Miami-Dade" required>
+              {countyOptions.map((county) => (
+                <option key={county}>{county}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span>Adverse party / parties</span>
+            <input name="opposingParties" type="text" placeholder="Names needed for conflict review" required />
+          </label>
+          <label>
+            <span>Urgency</span>
+            <select name="urgency" defaultValue="This week" required>
+              {urgencyOptions.map((urgency) => (
+                <option key={urgency}>{urgency}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </fieldset>
       <label>
         <span>Non-confidential summary</span>
         <textarea
@@ -147,7 +155,7 @@ export function ConsultationForm() {
         <span>I understand this form does not create an attorney-client relationship.</span>
       </label>
       <p className="form-disclaimer">
-        The firm uses this information to assess conflicts, fit, urgency, and next steps. Do not include confidential facts until representation is confirmed in writing.
+        Used to assess conflicts, fit, urgency, and next steps. Do not include confidential facts until representation is confirmed in writing.
       </p>
       <button className="button button-gold" type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Preparing Request" : "Submit Intake Summary"}
