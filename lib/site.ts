@@ -1,5 +1,5 @@
 export const site = {
-  name: "Huang Law, P.A.",
+  name: "Huang Law PLLC",
   attorney: "Michael Huang, Esq.",
   schemaAttorneyName: "Michael Huang",
   url: "https://www.huanglawfl.com",
@@ -15,7 +15,7 @@ export const site = {
 };
 
 export const legalDisclaimer =
-  "Attorney Advertising. This website is for general informational purposes only and does not constitute legal advice. Contacting Huang Law, P.A. does not create an attorney-client relationship.";
+  "Attorney Advertising. This website is for general informational purposes only and does not constitute legal advice. Contacting Huang Law PLLC does not create an attorney-client relationship.";
 
 export const trustItems = [
   "Florida local counsel",
@@ -141,7 +141,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-business-litigation-attorney",
     title: "Florida Business Litigation Attorney",
-    metaTitle: "Florida Business Litigation Attorney | Huang Law, P.A.",
+    metaTitle: "Florida Business Litigation Attorney | Huang Law PLLC",
     description:
       "Florida business litigation counsel for contract disputes, commercial claims, partnership conflicts, and complex civil litigation.",
     eyebrow: "Business Litigation",
@@ -167,7 +167,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-creditor-rights-lawyer",
     title: "Florida Creditor Rights Lawyer",
-    metaTitle: "Florida Creditor Rights Lawyer | Huang Law, P.A.",
+    metaTitle: "Florida Creditor Rights Lawyer | Huang Law PLLC",
     description:
       "Florida creditor rights representation for secured and unsecured creditors in enforcement, collections, and insolvency matters.",
     eyebrow: "Creditor's Rights",
@@ -193,7 +193,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-bankruptcy-attorney",
     title: "Florida Bankruptcy Attorney",
-    metaTitle: "Florida Bankruptcy Attorney | Huang Law, P.A.",
+    metaTitle: "Florida Bankruptcy Attorney | Huang Law PLLC",
     description:
       "Florida bankruptcy counsel for creditors, trustees, and businesses in Chapter 7, Chapter 11, and Chapter 13 proceedings.",
     eyebrow: "Bankruptcy",
@@ -219,7 +219,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-banking-law-attorney",
     title: "Florida Banking Law Attorney",
-    metaTitle: "Florida Banking Law Attorney | Huang Law, P.A.",
+    metaTitle: "Florida Banking Law Attorney | Huang Law PLLC",
     description:
       "Florida banking law attorney advising lenders and financial institutions in loan disputes, enforcement matters, and related litigation.",
     eyebrow: "Banking Law",
@@ -245,7 +245,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-probate-litigation-lawyer",
     title: "Florida Probate Litigation Lawyer",
-    metaTitle: "Florida Probate Litigation Lawyer | Huang Law, P.A.",
+    metaTitle: "Florida Probate Litigation Lawyer | Huang Law PLLC",
     description:
       "Florida probate litigation counsel for probate administration, fiduciary disputes, contested estates, and related litigation.",
     eyebrow: "Probate Law",
@@ -271,7 +271,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-immigration-lawyer",
     title: "Florida Immigration Lawyer",
-    metaTitle: "Florida Immigration Lawyer | Huang Law, P.A.",
+    metaTitle: "Florida Immigration Lawyer | Huang Law PLLC",
     description:
       "Florida immigration lawyer for business and family-based immigration matters with English, Mandarin, and Spanish communication.",
     eyebrow: "Immigration",
@@ -297,7 +297,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-certified-mediator",
     title: "Florida Certified Mediator",
-    metaTitle: "Florida Certified Mediator | Huang Law, P.A.",
+    metaTitle: "Florida Certified Mediator | Huang Law PLLC",
     description:
       "Florida Supreme Court Certified Mediator for business, civil, probate, creditor, and financial disputes.",
     eyebrow: "Mediation",
@@ -323,7 +323,7 @@ export const landingPages: LandingPage[] = [
   {
     slug: "florida-local-counsel",
     title: "Florida Local Counsel",
-    metaTitle: "Florida Local Counsel | Huang Law, P.A.",
+    metaTitle: "Florida Local Counsel | Huang Law PLLC",
     description:
       "Florida local counsel for law firms, referral attorneys, and national counsel handling Florida litigation and disputes.",
     eyebrow: "Florida Local Counsel",

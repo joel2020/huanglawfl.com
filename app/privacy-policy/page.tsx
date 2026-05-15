@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for Huang Law, P.A.",
+  description: "Privacy policy for Huang Law PLLC",
   alternates: { canonical: "/privacy-policy" },
 };
 
@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
         <p className="eyebrow">Privacy Policy</p>
         <h1>Privacy Policy</h1>
         <p>
-          Huang Law, P.A. collects information visitors choose to provide through email, phone calls, consultation requests, or direct communication with the firm. That information may include name, email, phone number, preferred language, matter type, county, opposing party information for conflict checks, urgency, and a brief description.
+          Huang Law PLLC collects information visitors choose to provide through email, phone calls, consultation requests, or direct communication with the firm. That information may include name, email, phone number, preferred language, matter type, county, opposing party information for conflict checks, urgency, and a brief description.
         </p>
         <h2>How Information Is Used</h2>
         <p>

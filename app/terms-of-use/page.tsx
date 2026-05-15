@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: "Terms of use for Huang Law, P.A.",
+  description: "Terms of use for Huang Law PLLC",
   alternates: { canonical: "/terms-of-use" },
 };
 
@@ -16,7 +16,7 @@ export default function TermsOfUse() {
         <p className="eyebrow">Terms of Use</p>
         <h1>Terms of Use</h1>
         <p>
-          This website is provided by Huang Law, P.A. for general informational purposes. The information on this site is not legal advice and should not be relied on as a substitute for advice from a qualified attorney.
+          This website is provided by Huang Law PLLC for general informational purposes. The information on this site is not legal advice and should not be relied on as a substitute for advice from a qualified attorney.
         </p>
         <h2>Attorney Advertising</h2>
         <p>
@@ -24,7 +24,7 @@ export default function TermsOfUse() {
         </p>
         <h2>No Attorney-Client Relationship</h2>
         <p>
-          Viewing this website, using the consultation request form, sending email, or calling Huang Law, P.A. does not create an attorney-client relationship. Representation begins only after the firm confirms the engagement in writing.
+          Viewing this website, using the consultation request form, sending email, or calling Huang Law PLLC does not create an attorney-client relationship. Representation begins only after the firm confirms the engagement in writing.
         </p>
         <h2>Confidential Information</h2>
         <p>
@@ -32,7 +32,7 @@ export default function TermsOfUse() {
         </p>
         <h2>Jurisdiction</h2>
         <p>
-          {site.attorney} is licensed in Florida. Huang Law, P.A. provides legal services for Florida matters and other matters where the firm is authorized to act.
+          {site.attorney} is licensed in Florida. Huang Law PLLC provides legal services for Florida matters and other matters where the firm is authorized to act.
         </p>
       </div>
     </main>

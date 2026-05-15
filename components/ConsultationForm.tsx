@@ -71,7 +71,7 @@ export function ConsultationForm() {
         return;
       }
 
-      setStatus("Your message was sent to Huang Law, P.A.");
+      setStatus("Your message was sent to Huang Law PLLC");
       form.reset();
       setMatterType(matterTypes[0]);
     } catch (error) {

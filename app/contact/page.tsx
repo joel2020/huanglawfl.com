@@ -8,7 +8,7 @@ import { firmLegalServiceSchema, legalDisclaimer, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Huang Law | Schedule a Consultation",
   description:
-    "Contact Huang Law, P.A. to discuss Florida litigation, creditor rights, bankruptcy, banking, probate, immigration, mediation, or local counsel matters.",
+    "Contact Huang Law PLLC to discuss Florida litigation, creditor rights, bankruptcy, banking, probate, immigration, mediation, or local counsel matters.",
   alternates: { canonical: "/contact" },
 };
 

@@ -58,7 +58,7 @@ export function LandingPage({ page }: { page: LandingPageData }) {
               </div>
             </div>
             <aside className="subpage-card" aria-label="Firm credentials">
-              <strong>Huang Law, P.A.</strong>
+              <strong>Huang Law PLLC</strong>
               <span>Florida litigation, creditor, banking, probate, immigration, and mediation counsel</span>
               <span>English, Mandarin, and Spanish</span>
               <span><a href={site.phoneHref}>{site.phone}</a></span>

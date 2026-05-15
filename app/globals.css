@@ -79,7 +79,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-mark {
   color: var(--gold);
   font-family: var(--font-serif);
-  font-size: 2.6rem;
+  font-size: 2.35rem;
   line-height: .82;
 }
 
@@ -93,12 +93,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .brand-text span {
   color: var(--warm-white);
-  font-size: 1.36rem;
+  font-size: 1.22rem;
 }
 
 .brand-text em {
   color: var(--gold);
-  font-size: .76rem;
+  font-size: .7rem;
   font-style: normal;
   letter-spacing: .16em;
   text-align: center;
@@ -175,14 +175,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .text-hero {
-  min-height: 620px;
+  min-height: 560px;
   display: grid;
   align-items: center;
 }
 
 .hero-copy {
-  max-width: 980px;
-  padding: 96px 0;
+  max-width: 900px;
+  padding: 84px 0;
 }
 
 .eyebrow {
@@ -202,17 +202,17 @@ h1, h2, h3 {
   line-height: 1.02;
 }
 
-h1 { max-width: 1050px; font-size: clamp(3.1rem, 7vw, 6.35rem); }
-h2 { font-size: clamp(2.35rem, 5vw, 4.65rem); }
-h3 { font-size: 1.48rem; }
+h1 { max-width: 960px; font-size: clamp(2.65rem, 5.2vw, 4.85rem); }
+h2 { font-size: clamp(1.9rem, 3.5vw, 3.35rem); }
+h3 { font-size: 1.26rem; }
 
 .hero-lede,
 .subpage-hero p,
 .contact-lede {
   max-width: 780px;
-  margin: 24px 0 30px;
+  margin: 22px 0 28px;
   color: rgba(250, 250, 248, .78);
-  font-size: 1.12rem;
+  font-size: 1.02rem;
 }
 
 .hero-actions {
@@ -271,7 +271,7 @@ h3 { font-size: 1.48rem; }
 .trust-grid span:first-child { border-left: 0; }
 
 .section {
-  padding: 96px 0;
+  padding: 84px 0;
 }
 
 .section-intro {
@@ -333,7 +333,7 @@ h3 { font-size: 1.48rem; }
 .process-step {
   display: block;
   min-height: 252px;
-  padding: 30px;
+  padding: 28px;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -341,7 +341,7 @@ h3 { font-size: 1.48rem; }
 }
 
 .compact-card {
-  min-height: 172px;
+  min-height: 148px;
   background: var(--warm-white);
 }
 
@@ -356,7 +356,7 @@ h3 { font-size: 1.48rem; }
 
 .compact-card h3,
 .service-card h3 {
-  margin-top: 24px;
+  margin-top: 22px;
   line-height: 1.1;
 }
 
@@ -385,7 +385,7 @@ h3 { font-size: 1.48rem; }
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   align-items: start;
-  gap: 72px;
+  gap: 64px;
 }
 
 .proof-panel {
@@ -396,7 +396,7 @@ h3 { font-size: 1.48rem; }
 }
 
 .proof-panel div {
-  padding: 30px;
+  padding: 26px;
   background: rgba(255, 255, 255, .045);
 }
 
@@ -404,7 +404,7 @@ h3 { font-size: 1.48rem; }
   display: block;
   margin-bottom: 8px;
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.28rem;
   font-weight: 500;
 }
 
@@ -417,8 +417,8 @@ h3 { font-size: 1.48rem; }
   display: grid;
   grid-template-columns: minmax(280px, 500px) minmax(0, 1fr);
   align-items: center;
-  gap: 72px;
-  padding: 96px 0;
+  gap: 64px;
+  padding: 84px 0;
 }
 
 .standalone-profile {
@@ -442,7 +442,7 @@ h3 { font-size: 1.48rem; }
 }
 
 .attorney-copy {
-  padding: 42px;
+  padding: 36px;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -484,7 +484,7 @@ h3 { font-size: 1.48rem; }
 .text-link:hover { color: var(--midnight); }
 
 .mediation {
-  padding: 96px 0;
+  padding: 84px 0;
 }
 
 .client-grid span {
@@ -499,7 +499,7 @@ h3 { font-size: 1.48rem; }
 }
 
 .final-cta {
-  padding: 96px 0;
+  padding: 84px 0;
 }
 
 .contact-page {
@@ -722,7 +722,7 @@ h3 { font-size: 1.48rem; }
 
 .legal-shell h1 {
   margin-bottom: 24px;
-  font-size: 4rem;
+  font-size: 3.1rem;
 }
 
 .legal-shell h2 {
@@ -745,7 +745,7 @@ h3 { font-size: 1.48rem; }
 }
 
 .subpage-hero {
-  padding: 92px 0;
+  padding: 82px 0;
 }
 
 .subpage-hero-grid {
@@ -766,7 +766,7 @@ h3 { font-size: 1.48rem; }
 
 .subpage-card strong {
   font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-size: 1.48rem;
   font-weight: 500;
 }
 
@@ -829,7 +829,7 @@ h3 { font-size: 1.48rem; }
   cursor: pointer;
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.18rem;
 }
 
 .faq-grid p {
@@ -849,19 +849,19 @@ h3 { font-size: 1.48rem; }
   grid-template-columns: 70px minmax(0, 1fr) auto;
   gap: 28px;
   align-items: start;
-  padding: 34px;
+  padding: 30px;
   background: var(--paper);
   scroll-margin-top: 110px;
 }
 
 .practice-row h2 {
-  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
 }
 
 .practice-row p:not(.eyebrow) {
   max-width: 780px;
   margin: 18px 0 0;
-  font-size: 1.02rem;
+  font-size: .98rem;
 }
 
 @media (max-width: 1120px) {
@@ -915,8 +915,8 @@ h3 { font-size: 1.48rem; }
   .text-hero { min-height: auto; }
   .section,
   .final-cta,
-  .mediation { padding: 72px 0; }
-  .attorney-section { padding: 72px 0; }
+  .mediation { padding: 64px 0; }
+  .attorney-section { padding: 64px 0; }
   .credential-list,
   .form-grid,
   .audience-grid,
@@ -932,9 +932,9 @@ h3 { font-size: 1.48rem; }
   .container { width: min(100% - 28px, 1280px); }
   .site-header { padding-inline: 16px; }
   .brand { gap: 10px; }
-  .brand-mark { font-size: 2.2rem; }
-  .brand-text span { font-size: 1.05rem; }
-  .brand-text em { font-size: .68rem; }
+  .brand-mark { font-size: 2rem; }
+  .brand-text span { font-size: .98rem; }
+  .brand-text em { font-size: .64rem; }
   .button,
   .hero-actions .button,
   .intake-form .button { width: 100%; }

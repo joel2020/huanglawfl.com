@@ -19,8 +19,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.huanglawfl.com"),
   title: {
-    default: "Huang Law, P.A. | Florida Litigation, Creditor Rights, Banking, Probate & Immigration Counsel",
-    template: "%s | Huang Law, P.A.",
+    default: "Huang Law PLLC | Florida Litigation, Creditor Rights, Banking, Probate & Immigration Counsel",
+    template: "%s | Huang Law PLLC",
   },
   description:
     "Strategic Florida counsel for complex litigation, creditor rights, bankruptcy, banking law, probate law, immigration, mediation, and local counsel engagements.",
@@ -34,24 +34,24 @@ export const metadata: Metadata = {
     "Florida certified mediator",
     "Florida local counsel",
   ],
-  authors: [{ name: "Huang Law, P.A." }],
-  creator: "Huang Law, P.A.",
-  publisher: "Huang Law, P.A.",
+  authors: [{ name: "Huang Law PLLC" }],
+  creator: "Huang Law PLLC",
+  publisher: "Huang Law PLLC",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Huang Law, P.A. | Strategic Florida Counsel",
+    title: "Huang Law PLLC | Strategic Florida Counsel",
     description:
       "Florida litigation, creditor rights, bankruptcy, banking law, probate, immigration, mediation, and local counsel for sophisticated clients.",
     url: "https://www.huanglawfl.com",
-    siteName: "Huang Law, P.A.",
+    siteName: "Huang Law PLLC",
     images: [
       {
         url: "/images/huang-law-og.svg",
         width: 1200,
         height: 630,
-        alt: "Huang Law, P.A. navy and gold wordmark",
+        alt: "Huang Law PLLC navy and gold wordmark",
       },
     ],
     locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Huang Law, P.A. | Strategic Florida Counsel",
+    title: "Huang Law PLLC | Strategic Florida Counsel",
     description:
       "Strategic Florida counsel for litigation, creditor rights, bankruptcy, banking, probate, immigration, mediation, and local counsel.",
     images: ["/images/huang-law-og.svg"],

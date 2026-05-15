@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <Link className="brand footer-brand" href="/#top" aria-label="Huang Law home">
             <span className="brand-mark" aria-hidden="true">HL</span>
-            <span className="brand-text"><span>Huang Law</span><em>P.A.</em></span>
+            <span className="brand-text"><span>Huang Law</span><em>PLLC</em></span>
           </Link>
           <p>Strategic Florida counsel for litigation, creditor rights, bankruptcy, banking law, probate, immigration, mediation, and local counsel engagements.</p>
         </div>

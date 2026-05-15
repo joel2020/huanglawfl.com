@@ -21,7 +21,7 @@ export function Header() {
         <span className="brand-mark" aria-hidden="true">HL</span>
         <span className="brand-text">
           <span>Huang Law</span>
-          <em>P.A.</em>
+          <em>PLLC</em>
         </span>
       </Link>
 
